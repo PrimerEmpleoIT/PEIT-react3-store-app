@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image';
-import { ArrowBackIos, ArrowForwardIos} from '@mui/icons-material';
+import { ArrowBackIos} from '@mui/icons-material';
 
 import { styled } from '@mui/system';
-import { makeStyles } from '@material-ui/core/styles'; 
-import { Theme } from '@mui/material';
-
-
 
 
 const Hero = (props: any) => {
@@ -39,17 +35,35 @@ const Hero = (props: any) => {
         position:'relative'
     });
     
-    const Button = styled('button')({
+    const Back = styled('button')({
         background: '#252931',
-        opacity: '0.5', 
+        opacity: '0.5',
+        borderRadius: '0px 30px 30px 0px',  
         cursor:'pointer',
         pointerEvents:'all',
         outline:'none',
         width:'50px',
         height:'50px',
         transition:'.3s ease all',
-
+        color:'white'
     })
+
+    
+    const Next = styled('button')({
+        background: '#252931',
+        opacity: '0.5',
+        borderRadius: '0px 30px 30px 0px',
+        transform: 'rotate(-180deg)',
+        cursor:'pointer',
+        pointerEvents:'all',
+        outline:'none',
+        width:'50px',
+        height:'50px',
+        transition:'.3s ease all',
+        color:'white'
+    }) 
+    
+    
     
     const Controls = styled('div')({ 
         position:'absolute',
@@ -62,20 +76,7 @@ const Hero = (props: any) => {
         alignItems:'center',
     })
 
-    const useStyles:any = makeStyles(() => ({
-        none: {
-            borderRadius: '0px 30px 30px 0px',
-            transform: "none"
-        },
-        headsDown: {
-            borderRadius: '0px 30px 30px 0px',  
-            transform: "rotate(-180deg)"
-        }
-      }));
     
-
-    const classes = useStyles()
-
     return (
     <Content>   
         
@@ -84,8 +85,8 @@ const Hero = (props: any) => {
             </div>
             
             <Controls>
-                <Button className={classes.none} onClick={previous}><ArrowBackIos/></Button>
-                <Button className={classes.headsDown} onClick={next}><ArrowForwardIos/></Button>
+                <Back onClick={previous}><ArrowBackIos/></Back>
+                <Next onClick={next}><ArrowBackIos/></Next>
             </Controls>
         
         

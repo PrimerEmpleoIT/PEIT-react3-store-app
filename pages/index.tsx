@@ -1,4 +1,5 @@
 
+
 import Hero from "../components/Hero"
 
 
@@ -7,6 +8,7 @@ const index = () => {
 
     <Hero />
   )
+
 
 }
 

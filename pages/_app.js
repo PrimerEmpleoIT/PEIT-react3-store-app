@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
@@ -8,6 +9,7 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmootionCache";
 import { Box } from "@mui/system";
 import Footer from "../components/Footer";
+
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

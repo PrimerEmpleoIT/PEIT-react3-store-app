@@ -1,8 +1,8 @@
-import Home from "./Home"
+import Hero from "../components/Hero"
 
 const index = () => {
   return (
-    <Home />
+    <Hero />
   )
 }
 

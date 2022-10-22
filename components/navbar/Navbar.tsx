@@ -1,18 +1,16 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Box, Container ,Button,TextField,InputAdornment } from "@mui/material";
+import { Box, Container ,TextField,InputAdornment } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
-import ShopIcon from '@mui/icons-material/Shop';
 import InfoMenu from "./InfoMenu"
 
 export default function Navbar(){
     const [visible,setVisible] = useState(false);
-    const [seeMenu,setSeeMenu] = useState(false);
-
+    const [seeMenu,setSeeMenu] = useState(false)
     const handleClickSearch = () =>{
         if (visible){
             setVisible(false)
@@ -23,7 +21,7 @@ export default function Navbar(){
     const handleClickMenu = () =>{
         if (seeMenu){
             setSeeMenu(false)
-        } else {
+        } else{
             setSeeMenu(true)
         }
     }
@@ -43,10 +41,7 @@ export default function Navbar(){
                         flex:'1',
                         cursor: 'pointer'
                     }}/>
-                    <ShopIcon htmlColor='#FFFFFF' sx={{
-                        flex:1,
-                    }}/>
-                    <TextField  sx={{backgroundColor:'#FFFFFF',borderRadius:'25px',padding:'.1rem'}}
+                    <TextField  sx={{flex:'5',backgroundColor:'#FFFFFF',borderRadius:'25px',padding:'.1rem'}}
                         id="input-with-icon-textfield"
                         InputProps={{
                             disableUnderline:true,
@@ -66,11 +61,9 @@ export default function Navbar(){
                     }}/>
                     
             </Box>
-            {(seeMenu)
-            ?<>
-                <InfoMenu/>
+            <>
+                <InfoMenu menu={seeMenu}/>
             </>
-            :null}
         </Container>
     )
 }

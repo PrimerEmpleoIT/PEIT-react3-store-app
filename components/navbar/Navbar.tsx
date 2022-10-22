@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Container, Box } from "@mui/material";
-import StoreIcon from '@mui/icons-material/Store';
-import NavbarComponents from './NavbarComponents';
-import NavbarSearch from './NavbarSearch';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Box, Container ,Button,TextField,InputAdornment } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
+import SearchIcon from '@mui/icons-material/Search';
+import ShopIcon from '@mui/icons-material/Shop';
+import InfoMenu from "./InfoMenu"
 
 export default function Navbar(){
     const [visible,setVisible] = useState(false);
+    const [seeMenu,setSeeMenu] = useState(false);
 
     const handleClickSearch = () =>{
         if (visible){
@@ -19,25 +20,57 @@ export default function Navbar(){
             setVisible(true)
         }
     }
-
+    const handleClickMenu = () =>{
+        if (seeMenu){
+            setSeeMenu(false)
+        } else {
+            setSeeMenu(true)
+        }
+    }
     return(
-        <Box component={"header"} sx={{
-                margin: '0 auto',
-                width: '80%',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
-            <StoreIcon fontSize="medium"/>
-            {visible?<NavbarSearch handle={handleClickSearch} />: <NavbarComponents handle={handleClickSearch} />}
+        <Container sx={{
+            backgroundColor: '#FFFFFF'
+        }}>
             <Box sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}>
-                <ShoppingCartIcon fontSize='medium'/>
-                <AccountCircleIcon fontSize='medium'/>
+                    height: '3rem',
+                    margin: '0 auto',
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    backgroundColor: '#0156FF'
+                }}>
+                    <MenuIcon onClick={handleClickMenu} htmlColor='#ffffff' sx={{
+                        flex:'1',
+                        cursor: 'pointer'
+                    }}/>
+                    <ShopIcon htmlColor='#FFFFFF' sx={{
+                        flex:1,
+                    }}/>
+                    <TextField  sx={{backgroundColor:'#FFFFFF',borderRadius:'25px',padding:'.1rem'}}
+                        id="input-with-icon-textfield"
+                        InputProps={{
+                            disableUnderline:true,
+                        startAdornment: (
+                        <InputAdornment position="start">
+                            <SearchIcon />
+                        </InputAdornment>
+          ),
+        }}
+        variant="standard"
+      />
+                    <LocalGroceryStoreIcon htmlColor='#FFFFFF' sx={{
+                        flex:'1'
+                    }}/>
+                    <AccountCircleIcon htmlColor='#FFFFFF' sx={{
+                        flex:'1'
+                    }}/>
+                    
             </Box>
-        </Box>
+            {(seeMenu)
+            ?<>
+                <InfoMenu/>
+            </>
+            :null}
+        </Container>
     )
 }

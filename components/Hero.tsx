@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { ArrowBackIos} from '@mui/icons-material';
 
 import { styled } from '@mui/system';
+
 
 
 const Hero = (props: any) => {
@@ -10,14 +11,19 @@ const Hero = (props: any) => {
     const images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState(images[0]);
+    
   
     // function to previous and next image in de hero banner  
     const selectNewImage = (index:number,images: string[] , next = true) =>{
+        
         const condition = next ? selectedIndex < images.length - 1: selectedIndex > 0;
         const nextIndex = next ? (condition ?  selectedIndex + 1 : 0) : condition ?  selectedIndex - 1 : images.length - 1;
+        console.log(nextIndex);
         setSelectedImage(images[nextIndex]);
         setSelectedIndex(nextIndex);
     }
+
+    
 
     const previous =() =>{
         selectNewImage(selectedIndex, images, false);
@@ -27,12 +33,21 @@ const Hero = (props: any) => {
         selectNewImage(selectedIndex, images);
     }
 
+    useEffect(()=>{
+        const interval = setInterval(() => {
+            selectNewImage(selectedIndex , images);
+          }, 5000);
+        return () => clearInterval(interval);
+        
+    },[selectedIndex])  
+
     const Content = styled('div')({
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
         maxWidth:'1200px',
-        position:'relative'
+        position:'relative',
+        margin:'0 auto'
     });
     
     const Back = styled('button')({
@@ -78,19 +93,19 @@ const Hero = (props: any) => {
 
     
     return (
-    <Content>   
-        
+
+        <Content>   
             <div>
-                <Image className='hola' src={require(`public/img/${selectedImage}`).default} alt="Hero-Imagen" />
+                <Image  src={require(`public/img/${selectedImage}`).default} alt="Hero-Imagen" />
             </div>
             
             <Controls>
                 <Back onClick={previous}><ArrowBackIos/></Back>
                 <Next onClick={next}><ArrowBackIos/></Next>
             </Controls>
-        
-        
-    </Content>
+        </Content>
+  
+    
   )
 }
 

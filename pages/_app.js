@@ -31,7 +31,7 @@ export default function MyApp(props) {
           {/* TO DO:
           aca va el navbar
           aca va el header */}
-          <Box sx={{flexGrow: 1}}>
+          <Box sx={{flexGrow: 1, justifyContent:'center' }}>
             <Component {...pageProps} />
           </Box>
           <Footer />

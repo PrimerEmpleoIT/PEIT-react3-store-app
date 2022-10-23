@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Box ,TextField,InputAdornment, useMediaQuery } from "@mui/material";
+import { Box ,TextField,InputAdornment, useMediaQuery, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import InfoMenu from "./InfoMenu"
 import ShopSharp  from '@mui/icons-material/ShopSharp';
-import Menu from './Menu';
-import ListItems from './ListItems';
 import Link from 'next/link';
 
 export default function Navbar(){
@@ -84,7 +82,7 @@ export default function Navbar(){
                 width:'100%',
                 height:'3rem'
             }}>
-                <LocalGroceryStoreIcon sx={{flex: '1'}} htmlColor='#000000'/>
+                <LocalGroceryStoreIcon fontSize={"large"} sx={{flex: '1'}} htmlColor='#000000'/>
                 <Box sx={{
                     display:'flex',
                     alignItems:'center',
@@ -92,41 +90,41 @@ export default function Navbar(){
                     flex:'8'
                 }}>
                     {(visible) 
-                    ?<TextField sx={{alignItems:'center',}}></TextField>
+                    ? <input placeholder='Search here...' style={{width:'100%',padding:'.2rem',borderRadius:'25px'}}></input>
                     :<Box sx={{display:'flex',alignItems:'center'}}>
                         <nav style={{margin:'auto'}}>
                             <ul style={{display:'flex',listStyle:'none'}}>
                                 <li>
-                                    <Link href={'/'} ><a style={{fontSize:'12px',margin:'0 .3rem'}}>Laptops</a></Link>
+                                    <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Laptops</Typography></Link>
                                 </li>
                                 <li>
-                                    <Link href={'/'}><a style={{fontSize:'12px',margin:'0 .3rem'}}>Desktop PCs</a></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Desktop PCs</Typography></Link>
                                 </li>
                                 <li>
-                                    <Link href={'/'}><a style={{fontSize:'12px',margin:'0 .3rem'}}>Networking Devices</a></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Networking Devices</Typography></Link>
                                 </li>
                                 <li>
-                                    <Link href={'/'}><a style={{fontSize:'12px',margin:'0 .3rem'}}>Printers & Scanners</a></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Printers & Scanners</Typography></Link>
                                 </li>
                                 <li>
-                                    <Link href={'/'}><a style={{fontSize:'12px',margin:'0 .3rem'}}>PC Parts</a></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>PC Parts</Typography></Link>
                                 </li>
                                 <li>
-                                    <Link href={'/'}><a style={{fontSize:'12px',margin:'0 .3rem'}}>All Other Products</a></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>All Other Products</Typography></Link>
                                 </li>
                                 <li>
-                                    <Link href={'/'} ><a style={{fontSize:'12px',margin:'0 .3rem'}}>Repairs</a></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Repairs</Typography></Link>
                                 </li>
                             </ul>
                         </nav>
                     </Box>}
-                    <SearchIcon  htmlColor='#000000' onClick={handleClickSearch}/>
+                    <SearchIcon fontSize={"large"}  htmlColor='#000000' onClick={handleClickSearch}/>
                 </Box>
                 <Box sx={{
                     display: 'flex'
                 }}>
-                    <ShopSharp sx={{flex: '1'}} htmlColor='#000000'/>
-                    <AccountCircleIcon sx={{flex: '1'}} htmlColor='#000000'/>
+                    <ShopSharp fontSize={"large"} sx={{flex: '1'}} htmlColor='#000000'/>
+                    <AccountCircleIcon fontSize={"large"} sx={{flex: '1'}} htmlColor='#000000'/>
                 </Box>
             </Box>
         </>

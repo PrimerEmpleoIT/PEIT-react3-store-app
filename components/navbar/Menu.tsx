@@ -5,11 +5,13 @@ export default function Menu(props:any){
     return(<Box component={"nav"} sx={{
         width: '70%',
         position: 'absolute',
+        zIndex: '999',
         transition: 'all 1s ease',
         transform: 'translateX(-150%)',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
+        padding: '.2rem'
     }} className={props.className}>
         <List sx={{ margin:'auto', width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <ListItem  disableGutters secondaryAction={

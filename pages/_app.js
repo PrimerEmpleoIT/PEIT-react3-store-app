@@ -9,6 +9,7 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmootionCache";
 import { Box } from "@mui/system";
 import Footer from "../components/Footer";
+import Navbar from "../components/navbar/Navbar"
 
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -26,8 +27,9 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Box
-          sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+          sx={{ display: "flex", flexDirection: "column", minHeight: "100vh"}}
         >
+          <Navbar/>
           {/* TO DO:
           aca va el navbar
           aca va el header */}

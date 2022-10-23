@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Box, Container ,TextField,InputAdornment } from "@mui/material";
+import { Box ,TextField,InputAdornment } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -26,13 +26,15 @@ export default function Navbar(){
         }
     }
     return(
-        <Container sx={{
-            backgroundColor: '#FFFFFF'
+        <Box sx={{
+            backgroundColor: '#FFFFFF',
+            display: {
+                tablet: 'none',
+            }
         }}>
             <Box sx={{
                     height: '3rem',
-                    margin: '0 auto',
-                    width: '100%',
+                    margin: '0',
                     display: 'flex',
                     alignItems: 'center',
                     backgroundColor: '#0156FF'
@@ -64,6 +66,6 @@ export default function Navbar(){
             <>
                 <InfoMenu menu={seeMenu}/>
             </>
-        </Container>
+        </Box>
     )
 }

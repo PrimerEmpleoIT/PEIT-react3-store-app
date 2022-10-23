@@ -9,6 +9,7 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmootionCache";
 import { Box } from "@mui/system";
 import Footer from "../components/Footer";
+import ServiceCards from "../components/ServiceCards"
 
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -34,6 +35,7 @@ export default function MyApp(props) {
           <Box sx={{flexGrow: 1}}>
             <Component {...pageProps} />
           </Box>
+          <ServiceCards/>
           <Footer />
         </Box>
       </ThemeProvider>

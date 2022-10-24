@@ -8,7 +8,7 @@ import { styled } from '@mui/system';
 
 const Hero = (props: any) => {
     //get the images using arrays and useState hook 
-    const images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
+    const images = ['1.png','2.png','3.png','4.png','5.png'];
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState(images[0]);
     
@@ -45,7 +45,7 @@ const Hero = (props: any) => {
         display:'flex',
         alignItems:'center',
         justifyContent:'center',
-        maxWidth:'1200px',
+        maxWidth:'1398px',
         position:'relative',
         margin:'0 auto'
     });

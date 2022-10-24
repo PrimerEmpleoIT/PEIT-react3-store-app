@@ -1,12 +1,12 @@
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import Box, { BoxProps } from "@mui/material/Box";
-import useMediaQuery from '@mui/material/useMediaQuery';
+import Box from "@mui/material/Box";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-export const Header = () => {
+const Header = () => {
   const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
   return (
-    <Box 
+    <Box
       sx={{
         fontWeight: "600",
         fontSize: "12px",
@@ -16,7 +16,7 @@ export const Header = () => {
       }}
     >
       <Box
-        flexDirection={isNotSmallerScreen ? 'row' : 'column'}
+        flexDirection={isNotSmallerScreen ? "row" : "column"}
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -73,3 +73,5 @@ export const Header = () => {
     </Box>
   );
 };
+
+export default Header;

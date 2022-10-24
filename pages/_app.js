@@ -8,8 +8,9 @@ import theme from "../src/theme";
 import createEmotionCache from "../src/createEmootionCache";
 import { Box } from "@mui/system";
 import Footer from "../components/Footer";
-import Navbar from "../components/navbar/Navbar"
-import ServiceCards from "../components/ServiceCards"
+import Navbar from "../components/navbar/Navbar";
+import ServiceCards from "../components/ServiceCards";
+import Header from "../components/Header";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -36,25 +37,19 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Box
-
           sx={{
             display: "flex",
             flexDirection: "column",
             minHeight: "100vh",
             alignItems: "center",
           }}
-
         >
-          <Navbar/>
-          {/* TO DO:
-          aca va el navbar
-          aca va el header */}
-
+          <Header />
+          <Navbar />
           <Box sx={{ flexGrow: 1 }}>
-
             <Component {...pageProps} />
           </Box>
-          <ServiceCards/>
+          <ServiceCards />
           <Footer />
         </Box>
       </ThemeProvider>

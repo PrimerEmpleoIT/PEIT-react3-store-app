@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
@@ -10,7 +9,6 @@ import createEmotionCache from "../src/createEmootionCache";
 import { Box } from "@mui/system";
 import Footer from "../components/Footer";
 
-
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,17 +19,32 @@ export default function MyApp(props) {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Box
-          sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+            alignItems: "center",
+          }}
         >
           {/* TO DO:
           aca va el navbar
           aca va el header */}
-          <Box sx={{flexGrow: 1}}>
+          <Box sx={{ flexGrow: 1 }}>
             <Component {...pageProps} />
           </Box>
           <Footer />

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-import { Box ,TextField,InputAdornment, useMediaQuery, Typography } from "@mui/material";
+import { Box ,TextField,InputAdornment, useMediaQuery, Typography, Button } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -11,8 +11,8 @@ import ShopSharp  from '@mui/icons-material/ShopSharp';
 import Link from 'next/link';
 
 export default function Navbar(){
-    const isSmallerTablet = useMediaQuery("(min-width:810px)")
-    const isBiggerDesktop = useMediaQuery("(min-width:1000px)")
+    const isSmallerTablet = useMediaQuery("(min-width:800px)")
+    const isBiggerDesktop = useMediaQuery("(min-width:950px)")
     const [visible,setVisible] = useState(false);
     const [seeMenu,setSeeMenu] = useState(false)
     const handleClickSearch = () =>{
@@ -77,6 +77,8 @@ export default function Navbar(){
             <Box display={
                 isSmallerTablet?'flex':'none'
             } sx={{
+                maxWidth:'1200px',
+                margin: '0 auto',
                 alignItems:'center',
                 justifyContent:'space-between',
                 width:'100%',
@@ -86,7 +88,6 @@ export default function Navbar(){
                 <Box sx={{
                     display:'flex',
                     alignItems:'center',
-                    justifyContent:'space-between',
                     flex:'8'
                 }}>
                     {(visible) 
@@ -95,36 +96,47 @@ export default function Navbar(){
                         <nav style={{margin:'auto'}}>
                             <ul style={{display:'flex',listStyle:'none'}}>
                                 <li>
-                                    <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Laptops</Typography></Link>
+                                    <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Laptops</Typography></Link>
                                 </li>
                                 <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Desktop PCs</Typography></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Desktop PCs</Typography></Link>
                                 </li>
                                 <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Networking Devices</Typography></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Networking Devices</Typography></Link>
                                 </li>
                                 <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Printers & Scanners</Typography></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Printers & Scanners</Typography></Link>
                                 </li>
                                 <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>PC Parts</Typography></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>PC Parts</Typography></Link>
                                 </li>
                                 <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>All Other Products</Typography></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>All Other Products</Typography></Link>
                                 </li>
                                 <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'14px':'12px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Repairs</Typography></Link>
+                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Repairs</Typography></Link>
                                 </li>
+                            
+                                <Button variant={'outlined'} sx={{
+                                    height:'1.3rem',
+                                    borderRadius:'25px',
+                                    border: 'solid 2px #0156FF',
+                                    margin:'auto'
+                            }}>
+                                <Typography fontSize={'12px'}>Our Deals</Typography>
+                            </Button>
                             </ul>
+                            
                         </nav>
                     </Box>}
-                    <SearchIcon fontSize={"large"}  htmlColor='#000000' onClick={handleClickSearch}/>
+                    <SearchIcon fontSize={"medium"}  htmlColor='#000000' onClick={handleClickSearch}/>
                 </Box>
                 <Box sx={{
-                    display: 'flex'
+                    display: 'flex',
+                    alignItems:'center'
                 }}>
-                    <ShopSharp fontSize={"large"} sx={{flex: '1'}} htmlColor='#000000'/>
-                    <AccountCircleIcon fontSize={"large"} sx={{flex: '1'}} htmlColor='#000000'/>
+                    <ShopSharp fontSize={"medium"} sx={{flex: '1',margin:'.1rem'}} htmlColor='#000000'/>
+                    <AccountCircleIcon fontSize={"medium"} sx={{flex: '1',margin:'.1rem'}} htmlColor='#000000'/>
                 </Box>
             </Box>
         </>

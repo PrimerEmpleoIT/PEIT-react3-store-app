@@ -3,16 +3,7 @@ import Star from "@mui/icons-material/Star";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CallSharpIcon from "@mui/icons-material/CallSharp";
 
-const product = {
-  title: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
-  price: 150000,
-  stock: true,
-  rate: 5,
-  reviews: 4,
-  img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
-};
-
-const ProductCard = () => {
+const ProductCard = (product) => {
   let max = product.rate; // max tiene que ser la puntuacion del producto
   let stock = product.stock;
   let colorStyle = product.stock ? "#78A962" : "#C94D3F";

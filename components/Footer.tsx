@@ -10,10 +10,11 @@ const Footer = () => {
       sx={{
         backgroundColor: "#020203",
         color: "#FFF",
+        width: '100%'
       }}
     >
       <Box
-        maxWidth={"xl"}
+        maxWidth={'1398px'}
         sx={{
           margin: "0 auto",
           display: "flex",
@@ -71,8 +72,7 @@ const Footer = () => {
           sx={{
             marginY: 5,
             display: "flex",
-            columnGap: "4em",
-            flexWrap: "wrap",
+            columnGap: "78px",
           }}
         >
           {footerData.map((block) => (

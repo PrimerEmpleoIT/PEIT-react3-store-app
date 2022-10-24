@@ -27,3 +27,10 @@ a {
     background: black;
   }
 }
+
+
+.active-menu{
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}

@@ -77,7 +77,7 @@ export default function Navbar(){
             <Box display={
                 isSmallerTablet?'flex':'none'
             } sx={{
-                maxWidth:'1200px',
+                maxWidth:'1398px',
                 margin: '0 auto',
                 alignItems:'center',
                 justifyContent:'space-between',

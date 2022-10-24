@@ -2,7 +2,6 @@
 
 import Hero from "../components/Hero"
 import Sponsors from '../components/Sponsors';
-import { styled } from '@mui/system';
 
 
 

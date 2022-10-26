@@ -1,5 +1,5 @@
-import { Box, Radio, RadioGroup, Typography , Button , Modal, TextField, TextareaAutosize  } from '@mui/material';
 import * as React from 'react';
+import { Box, Radio, RadioGroup, Typography , Button , Modal, TextField, TextareaAutosize  } from '@mui/material';
 import { useState } from 'react';
 import {testimonials} from "../src/constants/testimonials"
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
@@ -41,8 +41,8 @@ export default function Testimonials(){
         alert("subir nueva review")
     }
 
-    return( <Box>
-                <Box>
+    return( <Box maxWidth={"1398px"}>
+                <Box sx={{display:'flex'}}>
                     <Box>
                         <FormatQuoteIcon/>
                     </Box>
@@ -52,15 +52,15 @@ export default function Testimonials(){
                         :<Typography component={'blockquote'}>{aux.review}</Typography>}
                     </Box>
                 </Box>
-                <Box>
+                <Box sx={{display:'flex',justifyContent:'flex-end'}}>
                     {aux.error
-                    ?<Typography component={'h2'}>The author is not available</Typography>
-                    :<Typography component={'h3'}>{aux.author}</Typography>}
+                    ?<Typography component={'h2'}><b>The author is not available</b></Typography>
+                    :<Typography component={'h3'}><b>{aux.author}</b></Typography>}
                 </Box>
                 <Box>
-                    <Box>
+                    <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                         <Button onClick={handleOpen} variant="outlined">Leave us a review</Button>
-                        <RadioGroup>
+                        <RadioGroup >
                         <Modal
                             open={open}
                             onClose={handleClose}
@@ -72,20 +72,18 @@ export default function Testimonials(){
                                     Leave us a review
                                 </Typography>
                                 <form onSubmit={handleSubmit}>
-                                    <TextField></TextField>
-                                    <TextareaAutosize
-                                        aria-label="empty textarea"
-                                        placeholder="Empty"
-                                        style={{ width: 200 }}
-                                        />
-                                    <Button variant={'outlined'} endIcon={<SendIcon/>}>Send Review</Button>
+                                    <TextField sx={{width:'100%'}} placeholder='Put your Name and Surname'></TextField>
+                                    <TextareaAutosize maxLength={300} placeholder='Put your Review'/>
+                                    <Button onClick={handleClose} variant={'outlined'} endIcon={<SendIcon/>}>Send Review</Button>
                                 </form>
                             </Box>
                         </Modal>
-                            <Radio onClick={handleChange} value={0}/>
-                            <Radio onClick={handleChange} value={1}/>
-                            <Radio onClick={handleChange} value={2}/>
-                            <Radio onClick={handleChange} value={3}/>
+                            <Box sx={{display:'flex'}}>
+                                <Radio defaultChecked onClick={handleChange} value={0}/>
+                                <Radio onClick={handleChange} value={1}/>
+                                <Radio onClick={handleChange} value={2}/>
+                                <Radio onClick={handleChange} value={3}/>
+                            </Box>
                         </RadioGroup>
                     </Box>
                 </Box>

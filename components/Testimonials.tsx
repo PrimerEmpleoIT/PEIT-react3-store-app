@@ -41,25 +41,25 @@ export default function Testimonials(){
         alert("subir nueva review")
     }
 
-    return( <Box maxWidth={"1398px"}>
-                <Box sx={{display:'flex'}}>
+    return( <Box maxWidth={"1160px"} sx={{padding:'1rem'}}>
+                <Box sx={{display:'flex',marginBottom:'10px'}}>
                     <Box>
                         <FormatQuoteIcon/>
                     </Box>
                     <Box>
                         {aux.error
                         ?<Typography component={'h2'}>The testimony is not available</Typography>
-                        :<Typography component={'blockquote'}>{aux.review}</Typography>}
+                        :<Typography sx={{fontSize:'18px',fontWeight:'400'}} component={'blockquote'}>{aux.review}</Typography>}
                     </Box>
                 </Box>
-                <Box sx={{display:'flex',justifyContent:'flex-end'}}>
+                <Box sx={{display:'flex',justifyContent:'flex-end',marginBottom:'10px'}}>
                     {aux.error
                     ?<Typography component={'h2'}><b>The author is not available</b></Typography>
-                    :<Typography component={'h3'}><b>{aux.author}</b></Typography>}
+                    :<Typography sx={{fontSize:'14px',fontWeight:'400'}} component={'h3'}><b>{aux.author}</b></Typography>}
                 </Box>
                 <Box>
                     <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-                        <Button onClick={handleOpen} variant="outlined">Leave us a review</Button>
+                        <Button sx={{width:'182px',height:'37px'}} onClick={handleOpen} variant="outlined">Leave Us A Review</Button>
                         <RadioGroup >
                         <Modal
                             open={open}
@@ -79,10 +79,10 @@ export default function Testimonials(){
                             </Box>
                         </Modal>
                             <Box sx={{display:'flex'}}>
-                                <Radio defaultChecked onClick={handleChange} value={0}/>
-                                <Radio onClick={handleChange} value={1}/>
-                                <Radio onClick={handleChange} value={2}/>
-                                <Radio onClick={handleChange} value={3}/>
+                                <Radio size='small' defaultChecked onClick={handleChange} value={0}/>
+                                <Radio size='small' onClick={handleChange} value={1}/>
+                                <Radio size='small' onClick={handleChange} value={2}/>
+                                <Radio size='small' onClick={handleChange} value={3}/>
                             </Box>
                         </RadioGroup>
                     </Box>

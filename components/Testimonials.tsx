@@ -16,7 +16,12 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-  };
+    display:'flex',
+    flexDirection:'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+
+};
 
 
 export default function Testimonials(){
@@ -60,7 +65,7 @@ export default function Testimonials(){
                 <Box>
                     <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                         <Button sx={{width:'182px',height:'37px'}} onClick={handleOpen} variant="outlined">Leave Us A Review</Button>
-                        <RadioGroup >
+                        <RadioGroup defaultValue={0} >
                         <Modal
                             open={open}
                             onClose={handleClose}
@@ -68,13 +73,13 @@ export default function Testimonials(){
                             aria-describedby="modal-modal-description"
                         >
                             <Box sx={style}>
-                                <Typography id="modal-modal-title" variant="h6" component="h2">
+                                <Typography sx={{textAlign:'center'}} id="modal-modal-title" variant="h6" component="h2">
                                     Leave us a review
                                 </Typography>
                                 <form onSubmit={handleSubmit}>
-                                    <TextField sx={{width:'100%'}} placeholder='Put your Name and Surname'></TextField>
-                                    <TextareaAutosize maxLength={300} placeholder='Put your Review'/>
-                                    <Button onClick={handleClose} variant={'outlined'} endIcon={<SendIcon/>}>Send Review</Button>
+                                    <TextField sx={{width:'100%',marginBottom:'.2rem'}} placeholder='Put your Name and Surname'></TextField>
+                                    <TextareaAutosize style={{width:'100%'}}  maxLength={300} placeholder='Put your Review'/>
+                                    <Button  onClick={handleClose} variant={'outlined'} endIcon={<SendIcon/>}>Send Review</Button>
                                 </form>
                             </Box>
                         </Modal>

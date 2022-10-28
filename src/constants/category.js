@@ -1,19 +1,26 @@
-export const categoty =[
+const category =[
     {
         name:'Custome Builds',
-        img:'https://ibb.co/KmShpky'
+        img:'https://ibb.co/TBJXd9h',
+        url:'#'
     },
     {
         name:'MSI Laptop',
-        img:'https://ibb.co/MfNZtCg'
+        img:'https://ibb.co/MfNZtCg',
+        url:'#'
     },
     {
         name:'Desktops',
-        img:'https://ibb.co/3zwJyVb'
+        img:'https://ibb.co/3zwJyVb',
+        url:'#'
+
     },
     {
         name:'Gaming Monitors',
-        img:'https://ibb.co/0ZGq3zn'
+        img:'https://ibb.co/0ZGq3zn',
+        url:'#'
     }
 
 ]
+
+export default category

@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     title: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
     price: 150000,
@@ -40,3 +40,6 @@ export const products = [
     img: "https://http2.mlstatic.com/D_NQ_NP_612322-MLA51539141109_092022-O.webp",
   },
 ];
+
+
+export default products;

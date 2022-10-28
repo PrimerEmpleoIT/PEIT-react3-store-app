@@ -1,27 +1,23 @@
 
 import { Container} from '@mui/system';
 import {Typography, styled} from '@mui/material';
-import { Paper } from '@mui/material';
-import Custom from '../public/img/1Custom.png'
+
+import ProductCard from './ProductCard';
+import products from '../src/constants/products'
+import ImageCard from './ImageCard'; 
+import category from '../src/constants/category'
 
 
 
 
-const Styles = {
-  paperContainer: {
-      backgroundImage: `url(${Custom})`,
-  }
-};
-
-
-const TypeProducts = (category : any) => {
-  const Text = styled(Typography)`
+const TypeProducts = () => {
+  /* const Text = styled(Typography)`
 
     font-weight: 700;
     font-size: 22px;
     line-height: 130%;
 
-    /* or 29px */
+    
     display: flex;
     align-items: center;
     text-align: center;
@@ -30,7 +26,7 @@ const TypeProducts = (category : any) => {
     :hover{
 
     }
-    `
+    ` */
   
 
   return (
@@ -39,13 +35,17 @@ const TypeProducts = (category : any) => {
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
-      flexDirection:'column'
-      }}>
-        <Paper style={Styles.paperContainer}>
-          <Text>Custome Products</Text>
-          <a href="#">See more Products</a>
-        </Paper>
       
+      }}>
+       
+
+      <ImageCard name={category[0].name} img={category[0].img} url={category[0].url}/>
+      
+      {
+        products.map((product, i)=>{
+          return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
+        })
+      }
     </Container>
   )
 }

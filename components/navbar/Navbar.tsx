@@ -11,8 +11,8 @@ import ShopSharp  from '@mui/icons-material/ShopSharp';
 import Link from 'next/link';
 
 export default function Navbar(){
-    const isSmallerTablet = useMediaQuery("(min-width:800px)")
-    const isBiggerDesktop = useMediaQuery("(min-width:950px)")
+    const isSmallerTablet = useMediaQuery("(min-width:900px)")
+    const isBiggerDesktop = useMediaQuery("(min-width:1100px)")
     const [visible,setVisible] = useState(false);
     const [seeMenu,setSeeMenu] = useState(false)
     const handleClickSearch = () =>{
@@ -70,9 +70,9 @@ export default function Navbar(){
                         }}/>
                         
                 </Box>
-                <>
+                <Box sx={{position:'relative'}}>
                     <InfoMenu menu={seeMenu}/>
-                </>
+                </Box>
             </Box>
             <Box display={
                 isSmallerTablet?'flex':'none'

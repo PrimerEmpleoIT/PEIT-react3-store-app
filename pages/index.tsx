@@ -4,12 +4,17 @@ import styles from "../styles/Home.module.css";
 
 
 import Hero from "../components/Hero"
+import Sponsors from '../components/Sponsors';
+
+
 
 
 const index = () => {
   return (
-
-    <Hero />
+    <>
+      <Hero />
+      <Sponsors />
+    </>
   )
 
 

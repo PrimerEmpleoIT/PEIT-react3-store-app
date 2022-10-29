@@ -37,6 +37,7 @@ export default function Navbar(){
                 }
                 sx={{
                     backgroundColor: '#FFFFFF',
+                    width: '100%'
                 }}>
                 <Box sx={{
                         height: '3rem',

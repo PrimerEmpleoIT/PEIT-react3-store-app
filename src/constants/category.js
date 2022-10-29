@@ -1,23 +1,23 @@
 const category =[
     {
         name:'Custome Builds',
-        img:'https://ibb.co/TBJXd9h',
+        img:'https://i.ibb.co/mCdsgfz/custom.png',
         url:'#'
     },
     {
         name:'MSI Laptop',
-        img:'https://ibb.co/MfNZtCg',
+        img:'https://i.ibb.co/CnTsmsW/laptop.png',
         url:'#'
     },
     {
         name:'Desktops',
-        img:'https://ibb.co/3zwJyVb',
+        img:'https://i.ibb.co/4FsdTVZ/desktop.png',
         url:'#'
 
     },
     {
         name:'Gaming Monitors',
-        img:'https://ibb.co/0ZGq3zn',
+        img:'https://i.ibb.co/ZxZQVCM/monitor.png',
         url:'#'
     }
 

@@ -37,7 +37,7 @@ const products = [
     stock: true,
     rate: 1,
     reviews: 15,
-    img: "https://http2.mlstatic.com/D_NQ_NP_612322-MLA51539141109_092022-O.webp",
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
   },
 ];
 

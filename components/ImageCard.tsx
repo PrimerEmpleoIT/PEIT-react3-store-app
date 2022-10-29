@@ -1,22 +1,11 @@
 import React from 'react'
-import Img from '../public/img/1Custom.png'
 import { Box } from '@mui/material';
-import Image from 'next/image'
+import Link from 'next/link';
 interface  TImageCard {
     name: string,
     img: string,
     url: string,
   }
-
-  const Styles = {
-    paperContainer: {
-        height:350,
-        backgroundImage: `url("../public/img/1Custom.png")`,
-    }
-  };
-  
-  
-
 
 
 const ImageCard = ({img,name,url}:TImageCard) => {
@@ -25,25 +14,61 @@ const ImageCard = ({img,name,url}:TImageCard) => {
         
         <Box sx={{
             position:'absolute',
-            zIndex:1
+            zIndex:1,
+            
         }}>
-            <Image 
-                src={Img} 
+            {/* <Image 
+                src={img} 
                 alt={name} 
-                width={250} 
-                height={350} 
+                layout='fill'
                 style={{
                     position:'absolute',                
                 }}/>
+              /* <div>{img}</div> */ }
+
+        <Box
+          component={"img"}
+          src={img}
+          sx={{ position:'absolute' }}
+          />
         </Box>
 
         <Box sx={{
-            color:'black',
-            zIndex:3
+            zIndex:3,
+            position:'relative', 
+            color:'#ffffff',
+            display:'flex',
+            flexDirection:'column',
+            width:'233px',
+            height:'350px',
+            alignItems: 'center',
+            textAlign: 'center',
+            justifyContent:'space-between'
         }}>
-            <div>{img}</div>
-            <div>{name}</div>
-            <div>{url}</div>
+            
+            <Box sx={{
+              fontWeight: '700',
+              fontSize: '30px',
+              display: 'flex',
+              alignItems: 'center',
+              textAlign: 'center',
+              justifyContent:'center',
+              paddingTop:'8rem'
+              
+             }}>{name}</Box>
+
+            <Box sx={{
+              fontSize: '18px',
+              lineHeight: '100%',
+              display: 'flex',
+              textDecorationLine: 'underline',
+              paddingBottom:'2rem'
+            }}>
+              <Link href={url} >
+                <a style={{color:'#ffffff'}}>See All Products</a>
+              </Link>
+
+            </Box>
         </Box>
         
     </div>

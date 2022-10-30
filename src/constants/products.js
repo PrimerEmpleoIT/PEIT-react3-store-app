@@ -39,6 +39,30 @@ const products = [
     reviews: 15,
     img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
   },
+  {
+    title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
+    price: 180000,
+    stock: true,
+    rate: 1,
+    reviews: 15,
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
+  },
+  {
+    title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
+    price: 180000,
+    stock: true,
+    rate: 1,
+    reviews: 15,
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
+  },
+  {
+    title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
+    price: 180000,
+    stock: true,
+    rate: 1,
+    reviews: 15,
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
+  },
 ];
 
 

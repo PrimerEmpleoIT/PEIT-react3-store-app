@@ -13,7 +13,10 @@ const index = () => {
   return (
     <>
       <Hero />
-      <TypeProducts /> 
+      <TypeProducts index={0}/> 
+      <TypeProducts index={1}/> 
+      <TypeProducts index={2}/> 
+      <TypeProducts index={3}/> 
       <Sponsors />
     </>
   )

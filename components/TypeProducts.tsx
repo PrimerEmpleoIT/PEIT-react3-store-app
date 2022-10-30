@@ -6,11 +6,12 @@ import ProductCard from './ProductCard';
 import products from '../src/constants/products'
 import ImageCard from './ImageCard'; 
 import category from '../src/constants/category'
+import index from '../pages/index';
 
 
 
 
-const TypeProducts = () => {
+const TypeProducts = (props:any) => {
   /* const Text = styled(Typography)`
 
     font-weight: 700;
@@ -29,20 +30,22 @@ const TypeProducts = () => {
     ` */
   
 
+
   return (
 
     <Container maxWidth="sm" sx={{
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
-      
+      margin:'1rem'
       }}>
        
 
-      <ImageCard name={category[0].name} img={category[0].img} url={category[0].url}/>
+      <ImageCard name={category[props.index].name} img={category[props.index].img} url={category[props.index].url}/>
       
       {
         products.map((product, i)=>{
+          if(i>=5 ) return false
           return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
         })
       }

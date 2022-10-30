@@ -8,6 +8,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import AppbarMobile from './AppbarMobile';
+
 
 
 export default function Navbar(){
@@ -21,7 +23,7 @@ export default function Navbar(){
         :setViewInput(true)
     }
     return(
-        <Box sx={{height:'68px',maxWidth:'1398px',display:'flex'}}>
+        <Box sx={{height:'100%',maxWidth:'1398px',display:'flex'}}>
             {isNotSmallerScreen
             ?<Box sx={{maxWidth:'1398px',display:'flex',justifyContent:'space-between',alignItems:'center',margin:'0 auto'}}>
                 <StoreIcon htmlColor='#0156FF' fontSize='large' />
@@ -50,7 +52,7 @@ export default function Navbar(){
                     <AccountCircleIcon fontSize='medium'/>
                 </Box>
             </Box>
-            :<Box></Box>}
+            :<AppbarMobile/>}
         </Box>
     )
 }

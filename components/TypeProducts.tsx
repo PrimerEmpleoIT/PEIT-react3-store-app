@@ -6,7 +6,7 @@ import ProductCard from './ProductCard';
 import products from '../src/constants/products'
 import ImageCard from './ImageCard'; 
 import category from '../src/constants/category'
-import index from '../pages/index';
+
 
 
 

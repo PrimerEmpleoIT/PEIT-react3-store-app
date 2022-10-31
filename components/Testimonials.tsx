@@ -84,7 +84,7 @@ export default function Testimonials(){
                             </Box>
                         </Modal>
                             <Box sx={{display:'flex'}}>
-                                <Radio size='small' defaultChecked onClick={handleChange} value={0}/>
+                                <Radio size='small' onClick={handleChange} value={0}/>
                                 <Radio size='small' onClick={handleChange} value={1}/>
                                 <Radio size='small' onClick={handleChange} value={2}/>
                                 <Radio size='small' onClick={handleChange} value={3}/>

@@ -76,7 +76,7 @@ const Footer = () => {
           }}
         >
           {footerData.map((block) => (
-            <Box>
+            <Box key={block.id}>
               <Typography
                 key={block.title}
                 sx={{ marginBottom: 2, color: "#808081", fontSize: '14px' }}

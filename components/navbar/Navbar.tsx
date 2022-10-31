@@ -1,145 +1,59 @@
 import * as React from 'react';
 import { useState } from 'react';
-
-import { Box ,TextField,InputAdornment, useMediaQuery, Typography, Button } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
+//import isNotSmallerScreen from "../../src/mediaqueries";
+import {Box , Button, useMediaQuery,TextField,Typography} from "@mui/material";
+import StoreIcon from '@mui/icons-material/Store';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SearchIcon from '@mui/icons-material/Search';
-import InfoMenu from "./InfoMenu"
-import ShopSharp  from '@mui/icons-material/ShopSharp';
 import Link from 'next/link';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+import AppbarMobile from './AppbarMobile';
+
+
 
 export default function Navbar(){
-    const isSmallerTablet = useMediaQuery("(min-width:800px)")
-    const isBiggerDesktop = useMediaQuery("(min-width:950px)")
-    const [visible,setVisible] = useState(false);
-    const [seeMenu,setSeeMenu] = useState(false)
-    const handleClickSearch = () =>{
-        if (visible){
-            setVisible(false)
-        } else {
-            setVisible(true)
-        }
-    }
-    const handleClickMenu = () =>{
-        if (seeMenu){
-            setSeeMenu(false)
-        } else{
-            setSeeMenu(true)
-        }
+    const [viewInput,setViewInput] = useState(false);
+    const [input,setInput] = useState("")
+    const isNotSmallerScreen = useMediaQuery("(min-width:900px)")
+    const brokenWords = useMediaQuery("(max-width:1130px)")
+
+    const handleClickOpenInput = () =>{
+        viewInput
+        ?setViewInput(false)
+        :setViewInput(true)
     }
     return(
-        <>
-            <Box
-                display={
-                    isSmallerTablet ? 'none':'flex'
-                }
-                sx={{
-                    backgroundColor: '#FFFFFF',
-                    width: '100%'
-                }}>
-                <Box sx={{
-                        height: '3rem',
-                        margin: '0',
-                        display: 'flex',
-                        alignItems: 'center',
-                        backgroundColor: '#0156FF',
-                        width: '100%'
-                    }}>
-                        <MenuIcon onClick={handleClickMenu} htmlColor='#ffffff' sx={{
-                            flex:'1',
-                            cursor: 'pointer'
-                        }}/>
-                        <TextField  sx={{flex:'5',backgroundColor:'#FFFFFF',borderRadius:'25px',padding:'.1rem'}}
-                            id="input-with-icon-textfield"
-                            InputProps={{
-                                disableUnderline:true,
-                            startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-            ),
-            }}
-            variant="standard"
-        />
-                        <LocalGroceryStoreIcon htmlColor='#FFFFFF' sx={{
-                            flex:'1'
-                        }}/>
-                        <AccountCircleIcon htmlColor='#FFFFFF' sx={{
-                            flex:'1'
-                        }}/>
-                        
+        <Box sx={{maxWidth:'1398px',minWidth:'100%',display:'flex',height:'56px'}}>
+            {isNotSmallerScreen
+            ?<Box sx={{maxWidth:'1398px',display:'flex',justifyContent:'space-between',alignItems:'center',margin:'0 auto'}}>
+                <StoreIcon htmlColor='#0156FF' fontSize='large' />
+                {viewInput
+                ?<Box sx={{width:'100%',display: 'flex',alignItems:'center',justifyContent:'space-between',margin:'auto'}}>
+                    <input style={{minWidth:'700px',padding:'.5rem',borderRadius:'25px'}} placeholder='Search entiere store here...'/>
+                    <SearchIcon onClick={handleClickOpenInput} fontSize='medium'/>
+                    <CloseIcon fontSize='medium' htmlColor='#0156FF'/>
                 </Box>
-                <>
-                    <InfoMenu menu={seeMenu}/>
-                </>
-            </Box>
-            <Box display={
-                isSmallerTablet?'flex':'none'
-            } sx={{
-                maxWidth:'1398px',
-                margin: '0 auto',
-                alignItems:'center',
-                justifyContent:'space-between',
-                width:'100%',
-                height:'3rem'
-            }}>
-                <LocalGroceryStoreIcon fontSize={"large"} sx={{flex: '1'}} htmlColor='#000000'/>
-                <Box sx={{
-                    display:'flex',
-                    alignItems:'center',
-                    flex:'8'
-                }}>
-                    {(visible) 
-                    ? <input placeholder='Search here...' style={{width:'100%',padding:'.2rem',borderRadius:'25px'}}></input>
-                    :<Box sx={{display:'flex',alignItems:'center'}}>
-                        <nav style={{margin:'auto'}}>
-                            <ul style={{display:'flex',listStyle:'none'}}>
-                                <li>
-                                    <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Laptops</Typography></Link>
-                                </li>
-                                <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Desktop PCs</Typography></Link>
-                                </li>
-                                <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Networking Devices</Typography></Link>
-                                </li>
-                                <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Printers & Scanners</Typography></Link>
-                                </li>
-                                <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>PC Parts</Typography></Link>
-                                </li>
-                                <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>All Other Products</Typography></Link>
-                                </li>
-                                <li>
-                                <Link  href={'/'}><Typography fontSize={isBiggerDesktop?'13px':'10px'} sx={{margin:'0  .3rem',cursor:'pointer'}} component={"a"}>Repairs</Typography></Link>
-                                </li>
-                            
-                                <Button variant={'outlined'} sx={{
-                                    height:'1.3rem',
-                                    borderRadius:'25px',
-                                    border: 'solid 2px #0156FF',
-                                    margin:'auto'
-                            }}>
-                                <Typography fontSize={'12px'}>Our Deals</Typography>
-                            </Button>
-                            </ul>
-                            
-                        </nav>
-                    </Box>}
-                    <SearchIcon fontSize={"medium"}  htmlColor='#000000' onClick={handleClickSearch}/>
-                </Box>
-                <Box sx={{
-                    display: 'flex',
-                    alignItems:'center'
-                }}>
-                    <ShopSharp fontSize={"medium"} sx={{flex: '1',margin:'.1rem'}} htmlColor='#000000'/>
-                    <AccountCircleIcon fontSize={"medium"} sx={{flex: '1',margin:'.1rem'}} htmlColor='#000000'/>
+                :<Box sx={{width:'100%',display:'flex',alignItems:'center'}}>
+                    <Box component={"ul"} sx={{color:'black',display:'flex',listStyle:'none',alignItems:'center'}}>
+                        <li><Link  href={'/'} ><Typography fontSize={brokenWords?'10px':'14px'}  component={"b"}   style={{color:'black', marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Laptops</Typography></Link></li>
+                        <li><Link href={'/'} ><Typography fontSize={brokenWords?'10px':'14px'}  component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Desktop PCs</Typography></Link></li>
+                        <li><Link href={'/'}><Typography  fontSize={brokenWords?'10px':'14px'}  component={"b"} style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Networking Devices</Typography></Link></li>
+                        <li><Link href={'/'} ><Typography  fontSize={brokenWords?'10px':'14px'} component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Printers & Scanners</Typography></Link></li>
+                        <li><Link href={'/'} ><Typography  fontSize={brokenWords?'10px':'14px'} component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>PC parts</Typography></Link></li>
+                        <li><Link href={'/'} ><Typography  fontSize={brokenWords?'10px':'14px'} component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>All Other Products</Typography></Link></li>
+                        <li><Link href={'/'} ><Typography fontSize={brokenWords?'10px':'14px'}   component={"b"}  style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Repairs</Typography></Link></li>
+                        <li><Link href={'/'} ><Typography  fontSize={brokenWords?'10px':'14px'} component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Laptops</Typography></Link></li>
+                        <Button variant="outlined" sx={{color:'#0156FF'}}>Our Deals</Button>
+                    </Box>
+                    <SearchIcon onClick={handleClickOpenInput} fontSize='medium'/>    
+                </Box>}
+                <Box sx={{display:'flex',alignItems:'center',marginLeft:'2rem'}}>
+                    <LocalGroceryStoreIcon fontSize='medium'/>
+                    <AccountCircleIcon fontSize='medium'/>
                 </Box>
             </Box>
-        </>
+            :<AppbarMobile/>}
+        </Box>
     )
 }

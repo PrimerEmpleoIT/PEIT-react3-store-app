@@ -12,7 +12,6 @@ import Navbar from "../components/navbar/Navbar";
 import ServiceCards from "../components/ServiceCards";
 import Header from "../components/Header";
 import Testimonials from "../components/Testimonials"
-
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 

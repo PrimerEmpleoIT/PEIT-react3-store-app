@@ -52,13 +52,13 @@ const ProductCard = (product : any) => {
         sx={{ width: "150px", height: "150px", alignSelf: "center" }}
       ></Box>
       <Box sx={{ display: "inline-flex", alignItems: "center" }}>
-        {reviews.map((data) =>
+        {reviews.map((data,id) =>
           data ? (
-            <Star
+            <Star key={id}
               sx={{ color: "orange", width: "13px", height: "13px" }}
             ></Star>
           ) : (
-            <Star
+            <Star key={id}
               sx={{ color: "#CACDD8", width: "13px", height: "13px" }}
             ></Star>
           )

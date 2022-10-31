@@ -1,5 +1,6 @@
 export const footerData = [
   {
+    id:1,
     title: "Information",
     items: [
       "About Us",
@@ -14,6 +15,7 @@ export const footerData = [
     ],
   },
   {
+    id:2,
     title: "PC Parts",
     items: [
       "CPUS",
@@ -29,6 +31,7 @@ export const footerData = [
     ],
   },
   {
+    id: 3,
     title: "Desktop PCs",
     items: [
       "Custom PCs",
@@ -40,6 +43,7 @@ export const footerData = [
     ],
   },
   {
+    id:4,
     title: "Laptops",
     items: [
       "Evryday Use Notebooks",
@@ -51,6 +55,7 @@ export const footerData = [
     ],
   },
   {
+    id:5,
     title: "Address",
     items: [
       "Address: 1234 Street Adress City Address, 1234",

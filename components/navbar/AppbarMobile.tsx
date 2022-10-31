@@ -46,8 +46,8 @@ export default function DrawerAppBar(props: Props) {
       </Box>
       <hr></hr>
       <List sx={{display:'flex',flexDirection:'column',alignItems:'flex-start',padding:'10px'}}>
-        {navItems.map(item=>{
-          return(<Link href=''><a style={{color:'#000',textDecoration:'none'}}>{item}</a></Link>)
+        {navItems.map((item,id)=>{
+          return(<Link href='/' key={id}><a style={{color:'#000',textDecoration:'none'}}>{item}</a></Link>)
         })}
         <Button sx={{borderRadius:'25px'}} variant='outlined'> Our Deals</Button>
       </List>

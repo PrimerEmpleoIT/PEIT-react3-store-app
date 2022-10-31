@@ -63,7 +63,7 @@ const products = [
     img: "https://http2.mlstatic.com/D_NQ_NP_985723-MLA50433207785_062022-O.webp",
   },
   {
-    id: 8,
+     id: 8,
     title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
     price: 180000,
     stock: true,

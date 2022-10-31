@@ -1,6 +1,6 @@
 
-import { Container, styled } from '@mui/system';
-import Box from '@mui/material/Box';
+import { Container} from '@mui/system';
+import {styled} from '@mui/material';
 import Image from 'next/image';
 
 import image1 from '../public/img/image1.png'
@@ -15,18 +15,21 @@ import image7 from '../public/img/image7.png'
 const Sponsors = () => {
   const images = [image1,image2,image3,image4,image5,image6,image7];
 
-  const ContentImage = styled('div')({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '35px 55px',
-    gap: '10px',
+  const ContentImage = styled('div')`
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
         
-    width: '200px',
-    height: '149.48px',
-    left: '261px',
-    top: '2613px'
-  })
+    width: 200px;
+    height: 149.48px;
+    :hover{
+      background-color: #ebebeb;
+      transition: .2s;
+    }
+
+    `
+  
   
 
   return (
@@ -41,11 +44,10 @@ const Sponsors = () => {
           return (
             <ContentImage key={index}>
               <Image style={{ 
-              /* width: '152.72px',
-              height: '80px', */
-              flex:'none',
-              order:'0',
-              flexGrow:'0'}} src={source}  alt={'imagen'} width={'152.72px'} height = {'80px'}/>
+                flex:'none',
+                order:'0',
+                flexGrow:'0'}} 
+                src={source}  alt={'imagen'} width={'152.72px'} height = {'80px'}/>
             </ContentImage>
           )
         })

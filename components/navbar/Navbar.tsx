@@ -19,9 +19,7 @@ export default function Navbar(){
     const brokenWords = useMediaQuery("(max-width:1130px)")
 
     const handleClickOpenInput = () =>{
-        viewInput
-        ?setViewInput(false)
-        :setViewInput(true)
+        setViewInput(!viewInput)
     }
     return(
         <Box sx={{maxWidth:'1398px',minWidth:'100%',display:'flex',height:'56px'}}>

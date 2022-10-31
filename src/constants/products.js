@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     title: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
     price: 150000,
@@ -37,6 +37,33 @@ export const products = [
     stock: true,
     rate: 1,
     reviews: 15,
-    img: "https://http2.mlstatic.com/D_NQ_NP_612322-MLA51539141109_092022-O.webp",
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
+  },
+  {
+    title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
+    price: 180000,
+    stock: true,
+    rate: 1,
+    reviews: 15,
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
+  },
+  {
+    title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
+    price: 180000,
+    stock: true,
+    rate: 1,
+    reviews: 15,
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
+  },
+  {
+    title: "Notebook Asus Vivobook 15,6 I5 256ssd 8gb W11",
+    price: 180000,
+    stock: true,
+    rate: 1,
+    reviews: 15,
+    img: "https://http2.mlstatic.com/D_NQ_NP_913944-MLA44973386650_022021-O.webp",
   },
 ];
+
+
+export default products;

@@ -3,7 +3,7 @@ import Star from "@mui/icons-material/Star";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CallSharpIcon from "@mui/icons-material/CallSharp";
 
-const ProductCard = (product) => {
+const ProductCard = (product : any) => {
   let max = product.rate; // max tiene que ser la puntuacion del producto
   let stock = product.stock;
   let colorStyle = product.stock ? "#78A962" : "#C94D3F";

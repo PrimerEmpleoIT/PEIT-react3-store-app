@@ -18,7 +18,6 @@ const Hero = (props: any) => {
         
         const condition = next ? selectedIndex < images.length - 1: selectedIndex > 0;
         const nextIndex = next ? (condition ?  selectedIndex + 1 : 0) : condition ?  selectedIndex - 1 : images.length - 1;
-        console.log(nextIndex);
         setSelectedImage(images[nextIndex]);
         setSelectedIndex(nextIndex);
     }

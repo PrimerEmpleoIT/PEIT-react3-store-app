@@ -3,7 +3,7 @@ import Star from "@mui/icons-material/Star";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CallSharpIcon from "@mui/icons-material/CallSharp";
 
-const ProductCard = (product) => {
+const ProductCard = ({ product }) => {
   let max = product.rate; // max tiene que ser la puntuacion del producto
   let stock = product.stock;
   let colorStyle = product.stock ? "#78A962" : "#C94D3F";
@@ -19,12 +19,12 @@ const ProductCard = (product) => {
   return (
     <Box
       sx={{
+        flexWrap: "wrap",
         padding: "0px 25px",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         width: "235px",
-        height: "246px",
       }}
     >
       <Box
@@ -49,7 +49,10 @@ const ProductCard = (product) => {
       <Box
         component={"img"}
         src={product.img}
-        sx={{ width: "150px", height: "150px", alignSelf: "center" }}
+        sx={{
+          width: "150px",
+          alignSelf: "center",
+        }}
       ></Box>
       <Box sx={{ display: "inline-flex", alignItems: "center" }}>
         {reviews.map((data) =>

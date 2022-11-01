@@ -68,7 +68,7 @@ const ProductCard = (product: any) => {
             ></Star>
           )
         )}
-        <p>reviews({product.reviews})</p>
+        <p style={{ paddingLeft: "15px" }}>reviews({product.reviews})</p>
       </Box>
       <Box
         sx={{
@@ -97,14 +97,14 @@ const ProductCard = (product: any) => {
             fontSize: "14px",
           }}
         >
-          {product.price}
+          {`$ ${product.price}`}
         </Box>
         <Box
           sx={{
             textDecorationColor: "black",
           }}
         >
-          {product.price}
+          {`$ ${product.price}`}
         </Box>
       </Box>
     </Box>

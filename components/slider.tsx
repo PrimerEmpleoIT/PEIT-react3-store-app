@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ProductCard from "./Productcard";
+import ProductCard from "./ProductCard";
 import products from "../src/constants/products";
 import { Box } from "@mui/material";
 
@@ -37,7 +37,6 @@ const NewProductsSlider = () => {
         <Box
           sx={{
             color: "#0156FF",
-            paddingRight: "1.5em",
             textDecorationLine: "underline",
           }}
         >
@@ -99,7 +98,15 @@ const NewProductsSlider = () => {
         swipeable
       >
         {products.map((product) => (
-          <ProductCard product={product}></ProductCard>
+          <ProductCard
+            key={product.id}
+            rate={product.rate}
+            stock={product.stock}
+            img={product.img}
+            reviews={product.reviews}
+            title={product.title}
+            price={product.price}
+          ></ProductCard>
         ))}
       </Carousel>
     </Box>

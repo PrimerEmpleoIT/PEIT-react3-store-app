@@ -1,10 +1,42 @@
+import * as React from 'react';
+import { useState } from 'react';
 import { Box } from "@mui/system";
 import { Typography, Divider, TextField, Button } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { footerData, creditcards } from "../src/constants/footer";
+import Swal from 'sweetalert2'
 
+const re = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+function checkearEmail(email:string){
+  if (!email) return false;
+  return re.test(email);
+}
 const Footer = () => {
+  const [mail, setMail] = useState("");
+
+  const handleSubscribe = (e:any) => {
+    let check:boolean = checkearEmail(mail);
+
+
+    (check)
+    ?Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'We will send you all the news!!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    :Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong! Please enter a valid email address or try again later'
+    })
+  }
+
+  const handleChangeEmail = (e : any) => setMail(e.target.value);
+
   return (
     <Box
       sx={{
@@ -51,6 +83,7 @@ const Footer = () => {
                 borderRadius: "4px",
                 input: { color: "#FFF", width: "300px" },
               }}
+              onChange={handleChangeEmail}
             />
             <Button
               sx={{
@@ -61,8 +94,7 @@ const Footer = () => {
                 borderRadius: "35px",
                 ":hover": { backgroundColor: "blue", transition: "0.6s" },
                 marginLeft: "20px",
-              }}
-            >
+              }} onClick={handleSubscribe}>
               Subscribe
             </Button>
           </Box>

@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import Sponsors from "../components/Sponsors";
 import NewProductsSlider from "../components/slider";
 import TypeProducts from "../components/TypeProducts";
+import CardsInstagram from "../components/storiesInstagram/CardsInstagram"
 
 
 
@@ -23,6 +24,7 @@ const index = () => {
       <TypeProducts index={3}/> 
 
       <Sponsors />
+      <CardsInstagram/>
     </>
   );
 };

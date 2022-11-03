@@ -65,7 +65,7 @@ const NewProductsSlider = () => {
         responsive={{
           desktop: {
             breakpoint: {
-              max: 3000,
+              max: 1399,
               min: 1024,
             },
             items: 6,

@@ -22,7 +22,7 @@ const NewProductsSlider = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: "1398px" }}>
+    <Box sx={{ maxWidth: "1398px", margin: "auto" }}>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box
           sx={{

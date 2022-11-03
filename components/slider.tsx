@@ -22,7 +22,7 @@ const NewProductsSlider = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: "1398px" }}>
+    <Box sx={{ maxWidth: "1398px", margin: "auto" }}>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box
           sx={{
@@ -65,7 +65,7 @@ const NewProductsSlider = () => {
         responsive={{
           desktop: {
             breakpoint: {
-              max: 3000,
+              max: 1399,
               min: 1024,
             },
             items: 6,

@@ -1,4 +1,4 @@
-export const hero = [
+const hero = [
     {
         id:1,
         img:'https://i.ibb.co/nrYj4HW/1.png',
@@ -22,3 +22,5 @@ export const hero = [
     },
     
 ]
+
+export default hero

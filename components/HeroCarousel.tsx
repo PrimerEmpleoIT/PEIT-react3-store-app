@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Box } from '@mui/system';
 import hero from '../src/constants/hero'
+import Image from 'next/image';
 
 const HeroCarousel = (props : any) => {
 const responsive = {
@@ -81,46 +82,27 @@ const responsive = {
         slidesToSlide={1}
         swipeable
         >
-       
+        
 
-        
-        
-        <img
-            src="https://i.ibb.co/nrYj4HW/1.png"
-            style={{
-            display: 'block',
-            height: '100%',
-            margin: 'auto',
-            width: '100%'
-            }}
-        />
-        <img
-            src="https://i.ibb.co/3cZsthV/2.png"
-            style={{
-            display: 'block',
-            height: '100%',
-            margin: 'auto',
-            width: '100%'
-            }}
-        />
-        <img
-            src="https://i.ibb.co/7YMqqMG/5.png"
-            style={{
-            display: 'block',
-            height: '100%',
-            margin: 'auto',
-            width: '100%'
-            }}
-        />
-        <img
-            src="https://i.ibb.co/qWFRhm9/4.png"
-            style={{
-            display: 'block',
-            height: '100%',
-            margin: 'auto',
-            width: '100%'
-            }}
-        />
+        {
+          hero.map((data)=>{
+            return(
+            <Box
+                key={data.id}
+                component={"img"}
+                src={data.img}
+                alt = {data.name}
+                sx={{ display: 'block',
+                height: '100%',
+                margin: 'auto',
+                width: '100%'
+                      
+                    }}
+              />
+              )
+          })
+        }
+       
         
         </Carousel>
     </Box>

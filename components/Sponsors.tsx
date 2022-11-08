@@ -23,6 +23,7 @@ const Sponsors = (props: any) => {
     `
   
 
+
   return (
     <Container maxWidth="sm" sx={{
       display:'flex',
@@ -50,7 +51,7 @@ const Sponsors = (props: any) => {
                       
                     }}
               />
-              
+
             </ContentImage>
           )
         })

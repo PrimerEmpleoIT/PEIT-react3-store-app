@@ -1,8 +1,7 @@
-/* import Hero from "../components/Hero"; */
 import Sponsors from "../components/Sponsors";
 import NewProductsSlider from "../components/slider";
-import TypeProducts from "../components/TypeProducts";
-import NavProducts from "../components/NavProducts";
+import TypeProducts from "../components/TypeProducts/TypeProducts";
+import NavProducts from "../components/TypeProducts/NavProducts";
 import HeroCarousel from '../components/HeroCarousel';
 
 
@@ -10,7 +9,6 @@ import HeroCarousel from '../components/HeroCarousel';
 const index = () => {
   return (
     <>
-      {/* <Hero /> */}
       <HeroCarousel />
       
       <NewProductsSlider />

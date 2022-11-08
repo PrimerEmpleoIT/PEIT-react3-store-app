@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Box } from '@mui/system';
 import {Typography, styled} from '@mui/material';
-import navCategory from '../src/constants/navCategory'
+import navCategory from '../../src/constants/navCategory'
 
 
 

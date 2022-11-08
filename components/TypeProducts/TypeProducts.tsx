@@ -1,8 +1,8 @@
 import { Container} from '@mui/system';
-import ProductCard from './ProductCard';
-import products from '../src/constants/products'
+import ProductCard from '../ProductCard';
+import products from '../../src/constants/products'
 import ImageCard from './ImageCard'; 
-import category from '../src/constants/category'
+import category from '../../src/constants/category'
 
 
 

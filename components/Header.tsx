@@ -1,10 +1,27 @@
+import * as React from 'react';
+import { useState } from 'react';
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Button, Typography } from "@mui/material";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Header = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
   const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box
       sx={{
@@ -29,9 +46,58 @@ const Header = () => {
           sx={{
             display: "flex",
             alignItems: "center",
+            justifyContent:'center',
+            flexDirection:'row'
           }}
         >
-          Mon-Thu: 9:00 AM - 5:30 PM
+          <Typography sx={{color:'rgba(162, 166, 176, 1)',display:'flex',flexDirection:'row'}} fontSize={'13px'}>Mon-Thu: <Typography sx={{color:'white',marginLeft:'.1rem'}} fontSize={'13px'}>9:00 AM - 5:30 PM</Typography></Typography>
+          <Button sx={{cursor:'pointer',width:'2rem'}} 
+                  id="basic-button"
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}>
+            <KeyboardArrowDownIcon  fontSize='medium'/>
+          </Button>
+          <Menu
+            sx={{width:'100vw'}}
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+            <MenuItem onClick={handleClose}>
+              <Box sx={{display:'flex',flexDirection:'row'}}>
+                <AccessTimeIcon color={'primary'} sx={{marginRight:'.3rem'}} fontSize='large'/>
+                <Box>
+                  <Typography>We are open:</Typography>
+                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Mon-Thu: <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>9:00 AM - 5:30 PM</Typography></Typography>
+                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Fr: <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>9:00 AM - 6:00 PM</Typography></Typography>
+                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Sat: <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>11:00 AM - 5:00 PM</Typography></Typography>
+                </Box>
+              </Box>
+            </MenuItem>
+            <hr></hr>
+            <MenuItem onClick={handleClose}>
+            <Box sx={{display:'flex',flexDirection:'row'}}>
+                <LocationOnIcon sx={{marginRight:'.3rem'}} color={'primary'} fontSize={'large'}/>
+                <Box sx={{display:'flex',flexDirection:'column'}}>
+                  <Typography sx={{display:'flex',flexDirection:'column'}} fontSize={'13px'}>Address: 1234 Street Adress,</Typography>
+                  <Typography sx={{display:'flex',flexDirection:'column'}} fontSize={'13px'}>City Address, 1234</Typography>
+                </Box>
+              </Box>
+            </MenuItem>
+            <hr></hr>
+            <MenuItem onClick={handleClose}>
+              <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',margin:'auto'}}>
+                <Typography sx={{display:'flex',flexDirection:'row',justifyContent:'space-around'}} fontSize={'14px'}>Phones: <Typography fontSize={'14px'} sx={{color:'rgba(1, 86, 255, 1)',cursor:'pointer'}}> (00) 1234 5678</Typography></Typography>
+                <Typography sx={{display:'flex',flexDirection:'row',justifyContent:'space-around'}} fontSize={'14px'}>E-mail:<Typography fontSize={'14px'} sx={{color:'rgba(1, 86, 255, 1)',cursor:'pointer'}}>shop@email.com</Typography></Typography>
+              </Box>
+            </MenuItem>
+          </Menu>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Box

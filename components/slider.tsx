@@ -4,25 +4,37 @@ import "react-multi-carousel/lib/styles.css";
 import ProductCard from "./ProductCard";
 import products from "../src/constants/products";
 import { Box } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const NewProductsSlider = () => {
+  const mobile = useMediaQuery("(min-width:400px)");
+  const tablet = useMediaQuery("(min-width:900px)");
+  let responsiveWidth = 1400;
+  if (!tablet && mobile) {
+    responsiveWidth = 850;
+  } else if (!mobile) {
+    responsiveWidth = 390;
+  } else if (tablet && mobile) {
+    responsiveWidth = 1400;
+  }
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 6,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      breakpoint: { max: 900, min: 464 },
+      items: 3,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
+      breakpoint: { max: 390, min: 0 },
+      items: 2,
     },
   };
 
   return (
-    <Box sx={{ maxWidth: "1398px", margin: "auto" }}>
+    <Box maxWidth={responsiveWidth} sx={{ margin: "auto" }}>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box
           sx={{
@@ -62,32 +74,7 @@ const NewProductsSlider = () => {
         renderArrowsWhenDisabled={false}
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 1399,
-              min: 1024,
-            },
-            items: 6,
-            partialVisibilityGutter: 40,
-          },
-          mobile: {
-            breakpoint: {
-              max: 464,
-              min: 0,
-            },
-            items: 1,
-            partialVisibilityGutter: 30,
-          },
-          tablet: {
-            breakpoint: {
-              max: 1024,
-              min: 464,
-            },
-            items: 3,
-            partialVisibilityGutter: 30,
-          },
-        }}
+        responsive={responsive}
         rewind={false}
         rewindWithAnimation={false}
         rtl={false}

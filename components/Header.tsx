@@ -50,7 +50,10 @@ const Header = () => {
             flexDirection:'row'
           }}
         >
-          <Typography sx={{color:'rgba(162, 166, 176, 1)',display:'flex',flexDirection:'row'}} fontSize={'13px'}>Mon-Thu: <Typography sx={{color:'white',marginLeft:'.1rem'}} fontSize={'13px'}>9:00 AM - 5:30 PM</Typography></Typography>
+          <Box sx={{display:'flex',flexDirection:'row'}}>
+            <Typography sx={{color:'rgba(162, 166, 176, 1)'}} fontSize={'13px'}>Mon-Thu: </Typography>
+            <Typography sx={{color:'white',marginLeft:'.1rem'}} fontSize={'13px'}>9:00 AM - 5:30 PM</Typography>
+          </Box>  
           <Button sx={{cursor:'pointer',width:'2rem'}} 
                   id="basic-button"
                   aria-controls={open ? 'basic-menu' : undefined}
@@ -74,9 +77,16 @@ const Header = () => {
                 <AccessTimeIcon color={'primary'} sx={{marginRight:'.3rem'}} fontSize='large'/>
                 <Box>
                   <Typography>We are open:</Typography>
-                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Mon-Thu: <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>9:00 AM - 5:30 PM</Typography></Typography>
-                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Fr: <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>9:00 AM - 6:00 PM</Typography></Typography>
-                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Sat: <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>11:00 AM - 5:00 PM</Typography></Typography>
+                  <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Mon-Thu:</Typography>
+                  <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>9:00 AM - 5:30 PM</Typography>
+                  <Box>
+                    <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Fr: </Typography>
+                    <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>9:00 AM - 6:00 PM</Typography>
+                  </Box>
+                  <Box>
+                    <Typography sx={{color:'rgba(162, 166, 176, 1)',fontSize:'13px'}}>Sat: </Typography>
+                    <Typography sx={{color:'rgba(0, 0, 0, 1)'}}>11:00 AM - 5:00 PM</Typography>
+                  </Box>
                 </Box>
               </Box>
             </MenuItem>
@@ -93,8 +103,14 @@ const Header = () => {
             <hr></hr>
             <MenuItem onClick={handleClose}>
               <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',margin:'auto'}}>
-                <Typography sx={{display:'flex',flexDirection:'row',justifyContent:'space-around'}} fontSize={'14px'}>Phones: <Typography fontSize={'14px'} sx={{color:'rgba(1, 86, 255, 1)',cursor:'pointer'}}> (00) 1234 5678</Typography></Typography>
-                <Typography sx={{display:'flex',flexDirection:'row',justifyContent:'space-around'}} fontSize={'14px'}>E-mail:<Typography fontSize={'14px'} sx={{color:'rgba(1, 86, 255, 1)',cursor:'pointer'}}>shop@email.com</Typography></Typography>
+                <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-around'}}>
+                  <Typography  fontSize={'14px'}>Phones:</Typography>
+                  <Typography fontSize={'14px'} sx={{color:'rgba(1, 86, 255, 1)',cursor:'pointer'}}> (00) 1234 5678</Typography>
+                </Box>
+                <Box sx={{display:'flex',flexDirection:'row',justifyContent:'space-around'}}>
+                  <Typography fontSize={'14px'}>E-mail:</Typography>
+                  <Typography fontSize={'14px'} sx={{color:'rgba(1, 86, 255, 1)',cursor:'pointer'}}>shop@email.com</Typography>
+                </Box>
               </Box>
             </MenuItem>
           </Menu>

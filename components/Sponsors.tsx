@@ -6,6 +6,7 @@ import sponsor from '../src/constants/sponsor'
 
 const Sponsors = (props: any) => {
 
+
   const ContentImage = styled('div')`
     display: flex;
     flex-direction: column;
@@ -21,7 +22,7 @@ const Sponsors = (props: any) => {
 
     `
   
-  
+
 
   return (
     <Container maxWidth="sm" sx={{

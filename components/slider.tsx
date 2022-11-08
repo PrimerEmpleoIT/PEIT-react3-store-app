@@ -32,7 +32,6 @@ const NewProductsSlider = () => {
       items: 2,
     },
   };
-
   return (
     <Box maxWidth={responsiveWidth} sx={{ margin: "auto" }}>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>

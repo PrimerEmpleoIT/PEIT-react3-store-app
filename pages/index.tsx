@@ -1,16 +1,18 @@
-import Hero from "../components/Hero";
+/* import Hero from "../components/Hero"; */
 import Sponsors from "../components/Sponsors";
 import NewProductsSlider from "../components/slider";
 import TypeProducts from "../components/TypeProducts";
 import NavProducts from "../components/NavProducts";
+import HeroCarousel from '../components/HeroCarousel';
 
 
 
 const index = () => {
   return (
     <>
-      <Hero />
-
+      {/* <Hero /> */}
+      <HeroCarousel />
+      
       <NewProductsSlider />
 
       <TypeProducts index={0}/>

@@ -17,14 +17,7 @@ const ImageCard = ({img,name,url}:TImageCard) => {
             zIndex:1,
             
         }}>
-            {/* <Image 
-                src={img} 
-                alt={name} 
-                layout='fill'
-                style={{
-                    position:'absolute',                
-                }}/>
-              /* <div>{img}</div> */ }
+            
 
         <Box
           component={"img"}

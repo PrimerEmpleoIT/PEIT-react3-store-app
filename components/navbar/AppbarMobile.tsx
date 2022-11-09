@@ -5,9 +5,6 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -17,6 +14,9 @@ import Link from 'next/link';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import CloseIcon from '@mui/icons-material/Close';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 interface Props {
   /**
@@ -32,6 +32,14 @@ const navItems = ['Laptops', 'Desktop PCs', 'Networking Devices','Printers & Sca
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -71,7 +79,29 @@ export default function DrawerAppBar(props: Props) {
           </IconButton>
           <input style={{width:'80%',borderRadius:'25px',border:'none',padding:'.3rem',marginRight:'.5rem'}}></input>
           <LocalGroceryStoreIcon fontSize='medium'/>
-          <AccountCircleIcon fontSize='medium'/>
+          <Button id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick} sx={{width:'2rem',color:'white'}}
+                            >
+                        <AccountCircleIcon color='inherit' fontSize='medium'/>
+                    </Button>
+                    <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                        }}
+                    >
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>My Account</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>My Wish List (0)</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>Compare (0)</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>Create an Account</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>Sign In</Typography></MenuItem>
+                    </Menu>
         </Toolbar>
       </AppBar>
       <Box component="nav">

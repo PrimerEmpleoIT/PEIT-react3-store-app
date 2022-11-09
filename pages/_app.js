@@ -12,6 +12,7 @@ import Navbar from "../components/navbar/Navbar";
 import ServiceCards from "../components/ServiceCards";
 import Header from "../components/Header";
 import Testimonials from "../components/Testimonials"
+import CardInstagram from "../components/storiesInstagram/CardInstagram"
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -50,6 +51,7 @@ export default function MyApp(props) {
             <Component {...pageProps} />
           </Box>
           <Testimonials/>
+          <CardInstagram/>
           <ServiceCards />
           <Footer />
         </Box>

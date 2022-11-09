@@ -12,7 +12,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/GcshgQh/CB1.png",
                 specs:'none'
             },
             {
@@ -22,7 +22,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/rkhRPHm/CB2.png",
                 specs:'none'
             },
             {
@@ -32,7 +32,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/w6SSwxm/CB3.png",
                 specs:'none'
             },
             {
@@ -42,7 +42,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/HTMC4bx/CB4.png",
                 specs:'none'
             },
             {
@@ -52,7 +52,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/Z8PtcBS/CB5.png",
                 specs:'none'
             },
             
@@ -71,7 +71,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/PYR1S4n/MSIL1.png",
                 specs:'MSI GS Series'
             },
             {
@@ -81,7 +81,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/jbsXFmB/MSIL2.png",
                 specs:'MSI GS Series'
             },
             {
@@ -91,7 +91,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/KycXRpF/MSIL3.png",
                 specs:'MSI GS Series'
             },
             {
@@ -101,7 +101,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/dKDjrSQ/MSIL4.png",
                 specs:'MSI GS Series'
             },
             {
@@ -111,16 +111,17 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/74cV0XF/MSIL5.png",
                 specs:'MSI GS Series'
-            },{
+            },
+            {
                 id: 6,
                 title: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
                 price: 150000,
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/PYR1S4n/MSIL1.png",
                 specs:'MSI GT Series'
             },
             {
@@ -130,7 +131,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/jbsXFmB/MSIL2.png",
                 specs:'MSI GT Series'
             },
             {
@@ -140,7 +141,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/KycXRpF/MSIL3.png",
                 specs:'MSI GT Series'
             },
             {
@@ -150,7 +151,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/dKDjrSQ/MSIL4.png",
                 specs:'MSI GT Series'
             },
             {
@@ -160,16 +161,17 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/74cV0XF/MSIL5.png",
                 specs:'MSI GT Series'
-            },{
+            },
+            {
                 id: 11,
                 title: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
                 price: 150000,
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/PYR1S4n/MSIL1.png",
                 specs:'MSI GL Series'
             },
             {
@@ -179,7 +181,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/jbsXFmB/MSIL2.png",
                 specs:'MSI GL Series'
             },
             {
@@ -189,7 +191,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/KycXRpF/MSIL3.png",
                 specs:'MSI GL Series'
             },
             {
@@ -199,7 +201,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/dKDjrSQ/MSIL4.png",
                 specs:'MSI GL Series'
             },
             {
@@ -209,17 +211,18 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/74cV0XF/MSIL5.png",
                 specs:'MSI GL Series'
-            },{
+            },
+            {
                 id: 16,
                 title: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
                 price: 150000,
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
-                specs:'MSI GF Series'
+                img: "https://i.ibb.co/PYR1S4n/MSIL1.png",
+                specs:'MSI GE Series'
             },
             {
                 id: 17,
@@ -228,8 +231,8 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
-                specs:'MSI GF Series'
+                img: "https://i.ibb.co/jbsXFmB/MSIL2.png",
+                specs:'MSI GE Series'
             },
             {
                 id: 18,
@@ -238,8 +241,8 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
-                specs:'MSI GF Series'
+                img: "https://i.ibb.co/KycXRpF/MSIL3.png",
+                specs:'MSI GE Series'
             },
             {
                 id: 19,
@@ -248,8 +251,8 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
-                specs:'MSI GF Series'
+                img: "https://i.ibb.co/dKDjrSQ/MSIL4.png",
+                specs:'MSI GE Series'
             },
             {
                 id: 20,
@@ -258,9 +261,10 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
-                specs:'MSI GF Series'
+                img: "https://i.ibb.co/74cV0XF/MSIL5.png",
+                specs:'MSI GE Series'
             },
+            
             
         ]
     },
@@ -277,7 +281,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/fnQvxJL/DESK1.png",
                 specs:'MSI Infinute Series'
             },
             {
@@ -287,7 +291,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/T4xMwJF/DESK2.png",
                 specs:'MSI Infinute Series'
             },
             {
@@ -297,7 +301,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Infinute Series'
             },
             {
@@ -307,7 +311,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Infinute Series'
             },
             {
@@ -317,7 +321,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Infinute Series'
             },{
                 id: 6,
@@ -326,7 +330,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/fnQvxJL/DESK1.png",
                 specs:'MSI Triden'
             },
             {
@@ -336,7 +340,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/T4xMwJF/DESK2.png",
                 specs:'MSI Triden'
             },
             {
@@ -346,7 +350,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Triden'
             },
             {
@@ -356,7 +360,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Triden'
             },
             {
@@ -366,7 +370,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Triden'
             },{
                 id: 11,
@@ -375,7 +379,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/fnQvxJL/DESK1.png",
                 specs:'MSI GL Series'
             },
             {
@@ -385,7 +389,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/T4xMwJF/DESK2.png",
                 specs:'MSI GL Series'
             },
             {
@@ -395,7 +399,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI GL Series'
             },
             {
@@ -405,7 +409,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI GL Series'
             },
             {
@@ -415,7 +419,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI GL Series'
             },{
                 id: 16,
@@ -424,7 +428,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/fnQvxJL/DESK1.png",
                 specs:'MSI Nightblade'
             },
             {
@@ -434,7 +438,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/T4xMwJF/DESK2.png",
                 specs:'MSI Nightblade'
             },
             {
@@ -444,7 +448,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Nightblade'
             },
             {
@@ -454,7 +458,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Nightblade'
             },
             {
@@ -464,7 +468,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/StZNnqW/DESK3.png",
                 specs:'MSI Nightblade'
             },
             
@@ -484,7 +488,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/bvZqpGP/MONITOR1.png",
                 specs:'none'
             },
             {
@@ -494,7 +498,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/ZMSbdPv/MONITOR2.png",
                 specs:'none'
             },
             {
@@ -504,7 +508,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/QmJ59j3/MONITOR3.png",
                 specs:'none'
             },
             {
@@ -514,7 +518,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/6WTWVkk/MONITOR4.png",
                 specs:'none'
             },
             {
@@ -524,7 +528,7 @@ const typeProducts = [
                 stock: true,
                 rate: 5,
                 reviews: 4,
-                img: "https://http2.mlstatic.com/D_NQ_NP_759987-MLA43929501880_102020-O.webp",
+                img: "https://i.ibb.co/ZMSbdPv/MONITOR2.png",
                 specs:'none'
             },
             

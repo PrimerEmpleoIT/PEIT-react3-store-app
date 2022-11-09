@@ -1,34 +1,49 @@
 import { Container} from '@mui/system';
 import ProductCard from '../ProductCard';
-import products from '../../src/constants/products'
 import ImageCard from './ImageCard'; 
-import category from '../../src/constants/category'
-
+import typeProducts from '../../src/constants/typeProducts'
+import NavProducts from './NavProducts';
+import { Box } from '@mui/material';
 
 
 
 const TypeProducts = (props:any) => {
-
+  
+    console.log(typeProducts[props.index].products)
+  
 
   return (
-
-    <Container maxWidth="sm" sx={{
-      display:'flex',
-      justifyContent:'center',
-      alignItems:'center',
-      margin:'1rem'
-      }}>
-       
-
-      <ImageCard name={category[props.index].name} img={category[props.index].img} url={category[props.index].url}/>
+    <Box>
+      {/* <NavProducts in={0}/> */}
       
-      {
-        products.map((product, i)=>{
-          if(i>=5 ) return false
-          return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
-        })
-      }
-    </Container>
+      <Container maxWidth="sm" sx={{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        margin:'1rem'
+        }}>
+        
+        
+        <ImageCard name={typeProducts[props.index].name} img={typeProducts[props.index].img} url={typeProducts[props.index].url}/>
+        
+        {/* {
+          products.map((product, i)=>{
+            if(i>=5 ) return false
+            return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
+          })
+
+        } */}
+        
+
+        {
+          typeProducts[props.index].products.map((product, i)=>{
+            if(i>=5 ) return false
+            return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
+                                    
+          })
+        }
+      </Container>
+    </Box>
   )
 }
 

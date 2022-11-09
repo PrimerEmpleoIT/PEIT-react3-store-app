@@ -10,9 +10,7 @@ const index = () => {
   return (
     <>
       <HeroCarousel />
-      
       <NewProductsSlider />
-
       <TypeProducts index={0}/>
       <NavProducts in={0}/>
       <TypeProducts index={1}/> 

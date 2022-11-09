@@ -9,15 +9,24 @@ import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import AppbarMobile from './AppbarMobile';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 
 
 export default function Navbar(){
     const [viewInput,setViewInput] = useState(false);
     const [input,setInput] = useState("")
-    const isNotSmallerScreen = useMediaQuery("(min-width:900px)")
-    const brokenWords = useMediaQuery("(max-width:1130px)")
-
+    const isNotSmallerScreen = useMediaQuery("(min-width:989px)")
+    const brokenWords = useMediaQuery("(max-width:1200px)")
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     const handleClickOpenInput = () =>{
         setViewInput(!viewInput)
     }
@@ -42,13 +51,34 @@ export default function Navbar(){
                         <li><Link href={'/'} ><Typography  fontSize={brokenWords?'10px':'14px'} component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>All Other Products</Typography></Link></li>
                         <li><Link href={'/'} ><Typography fontSize={brokenWords?'10px':'14px'}   component={"b"}  style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Repairs</Typography></Link></li>
                         <li><Link href={'/'} ><Typography  fontSize={brokenWords?'10px':'14px'} component={"b"}   style={{color:'black',marginRight:'10px',textDecoration:'none',fontWeight: '600',lineHeight: '21px'}}>Laptops</Typography></Link></li>
-                        <Button variant="outlined" sx={{color:'#0156FF'}}>Our Deals</Button>
+                        <Button variant="outlined" sx={{color:'#0156FF',marginRight:'3rem'}}>Our Deals</Button>
                     </Box>
                     <SearchIcon onClick={handleClickOpenInput} fontSize='medium'/>    
                 </Box>}
                 <Box sx={{display:'flex',alignItems:'center',marginLeft:'2rem'}}>
                     <LocalGroceryStoreIcon fontSize='medium'/>
-                    <AccountCircleIcon fontSize='medium'/>
+                    <Button id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick} sx={{width:'2rem',color:'#000'}}>
+                        <AccountCircleIcon fontSize='medium'/>
+                    </Button>
+                    <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                        }}
+                    >
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>My Account</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>My Wish List (0)</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>Compare (0)</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>Create an Account</Typography></MenuItem>
+                        <MenuItem onClick={handleClose}><Typography fontSize={'12px'}>Sign In</Typography></MenuItem>
+                    </Menu>
                 </Box>
             </Box>
             :<AppbarMobile/>}

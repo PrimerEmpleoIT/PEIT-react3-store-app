@@ -5,7 +5,15 @@ import { Box } from "@mui/system";
 import products from "../../src/constants/products";
 
 export default function Product(){
-    const [product,setProduct] = useState({});
+    const [product, setProduct] = useState<{
+        id: number,
+        title: string,
+        price: number,
+        stock: boolean,
+        rate: number,
+        reviews: number,
+        img: string,
+      }| null>(null);
     const router = useRouter();
     const route = router.query.idProduct;
 

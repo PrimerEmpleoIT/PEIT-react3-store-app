@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
 interface  TImageCard {
     name: string,
@@ -9,10 +9,10 @@ interface  TImageCard {
 
 
 const ImageCard = ({img,name,url}:TImageCard) => {
+  const isSmallerTablet = useMediaQuery("(max-width:768px)")
   return (
     <div>
-        
-        <Box sx={{
+      <Box sx={{
             position:'absolute',
             zIndex:1,
             
@@ -69,7 +69,7 @@ const ImageCard = ({img,name,url}:TImageCard) => {
               </Link>
 
             </Box>
-        </Box>
+      </Box>
         
     </div>
   )

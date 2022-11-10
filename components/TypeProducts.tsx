@@ -12,11 +12,12 @@ const TypeProducts = (props:any) => {
 
   return (
 
-    <Container maxWidth="sm" sx={{
+    <Container sx={{
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
-      margin:'1rem'
+      margin:'1rem',
+      width:'100%'
       }}>
        
 

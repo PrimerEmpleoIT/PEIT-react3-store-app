@@ -2,19 +2,23 @@ import { Container} from '@mui/system';
 import ProductCard from '../ProductCard';
 import ImageCard from './ImageCard'; 
 import typeProducts from '../../src/constants/typeProducts'
-import NavProducts from './NavProducts';
+import NavProducts from './NavProducts'; 
 import { Box } from '@mui/material';
 
 
 
 const TypeProducts = (props:any) => {
-  
-    console.log(typeProducts[props.index].products)
-  
-
+    
+    
+    let typeItems:any = typeProducts[props.index];
+    let allProducts = typeProducts[props.index].products;
+    /* console.log(allProducts[1].specs) */
   return (
     <Box>
-      {/* <NavProducts in={0}/> */}
+       
+       {
+        allProducts[1].specs? <NavProducts in={(props.index) -1}  /> : null
+       }
       
       <Container maxWidth="sm" sx={{
         display:'flex',
@@ -24,7 +28,7 @@ const TypeProducts = (props:any) => {
         }}>
         
         
-        <ImageCard name={typeProducts[props.index].name} img={typeProducts[props.index].img} url={typeProducts[props.index].url}/>
+        <ImageCard name={typeItems.name} img={typeItems.img} url={typeItems.url}/>
         
         {/* {
           products.map((product, i)=>{
@@ -36,7 +40,7 @@ const TypeProducts = (props:any) => {
         
 
         {
-          typeProducts[props.index].products.map((product, i)=>{
+          allProducts.map((product, i)=>{
             if(i>=5 ) return false
             return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
                                     

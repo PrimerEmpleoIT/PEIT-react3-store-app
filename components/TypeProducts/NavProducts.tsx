@@ -19,39 +19,45 @@ const NavProducts = (props:any) => {
     align-items: center;
     text-align: center;
     color: #000000;
+    
     ` 
   const Content = styled(Box)`
     margin-right: 3rem;
+    margin-top:1rem;
+    border-bottom: 0.2em solid #ffffff ;
     :hover{
-      border-bottom:2px solid #0156FF ;
+      border-bottom: 0.2em solid #0156FF ;
+      transition: .3s;
     }
 
   `
 
 
   return (
-    <Box sx={{
-      display:'flex',
-      flexDirection:'row',
-      margin:'0 auto',
-      marginLeft:'3rem'
-    }}>
-      
 
-      {
-
-          /* console.log('section', section)
-          console.log('section-items', section.items) */
-          section.items.map((subSection:any, j:number)=>{
-            return ( <Content key={j}> <Link href={subSection.url}><Text>{subSection.name}</Text></Link> </Content>)  
-          })
-          
-          
+  
+      <Box sx={{
+        display:'flex',
+        flexDirection:'row',
+        margin:'0 auto',
+        marginLeft:'3rem'
+      }}>
         
-      }
-      
-      
-    </Box >
+
+        {
+
+            /* console.log('section', section)
+            console.log('section-items', section.items) */
+            section.items.map((subSection:any, j:number)=>{
+              return ( <Content key={j}> <Link href={subSection.url}><Text>{subSection.name}</Text></Link> </Content>)  
+            })
+            
+            
+          
+        }
+        
+        
+      </Box >
   )
 }
 

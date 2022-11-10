@@ -13,7 +13,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/GcshgQh/CB1.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 2,
@@ -23,7 +23,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/rkhRPHm/CB2.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 3,
@@ -33,7 +33,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/w6SSwxm/CB3.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 4,
@@ -43,7 +43,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/HTMC4bx/CB4.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 5,
@@ -53,7 +53,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/Z8PtcBS/CB5.png",
-                specs:'none'
+                specs:false
             },
             
         ]
@@ -489,7 +489,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/bvZqpGP/MONITOR1.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 2,
@@ -499,7 +499,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/ZMSbdPv/MONITOR2.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 3,
@@ -509,7 +509,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/QmJ59j3/MONITOR3.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 4,
@@ -519,7 +519,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/6WTWVkk/MONITOR4.png",
-                specs:'none'
+                specs:false
             },
             {
                 id: 5,
@@ -529,7 +529,7 @@ const typeProducts = [
                 rate: 5,
                 reviews: 4,
                 img: "https://i.ibb.co/ZMSbdPv/MONITOR2.png",
-                specs:'none'
+                specs:false
             },
             
         ]

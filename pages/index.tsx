@@ -1,7 +1,6 @@
 import Sponsors from "../components/Sponsors";
 import NewProductsSlider from "../components/slider";
 import TypeProducts from "../components/TypeProducts/TypeProducts";
-import NavProducts from "../components/TypeProducts/NavProducts";
 import HeroCarousel from '../components/HeroCarousel';
 
 
@@ -11,12 +10,10 @@ const index = () => {
     <>
       <HeroCarousel />
       <NewProductsSlider />
-      <TypeProducts index={0}/>
-      <NavProducts in={0}/>
-      <TypeProducts index={1}/> 
-      <NavProducts in={1}/>
-      <TypeProducts index={2}/> 
-      <TypeProducts index={3}/> 
+      <TypeProducts index={0} />
+      <TypeProducts index={1} /> 
+      <TypeProducts index={2} /> 
+      <TypeProducts index={3} /> 
 
       <Sponsors />
     </>

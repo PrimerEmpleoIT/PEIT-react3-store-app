@@ -2,11 +2,12 @@ import { Box } from "@mui/system";
 import Star from "@mui/icons-material/Star";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CallSharpIcon from "@mui/icons-material/CallSharp";
+import Link from "next/link";
 
-const ProductCard = (product: any) => {
-  let max = product.rate; // max tiene que ser la puntuacion del producto
-  let stock = product.stock;
-  let colorStyle = product.stock ? "#78A962" : "#C94D3F";
+const ProductCard = (props: any) => {
+  let max = props.rate; // max tiene que ser la puntuacion del producto
+  let stock = props.stock;
+  let colorStyle = props.stock ? "#78A962" : "#C94D3F";
   let reviews = [];
   for (let i = 0; i < max; i++) {
     reviews.push(true);
@@ -17,6 +18,7 @@ const ProductCard = (product: any) => {
   }
 
   return (
+    <Link href={`/products/${props.indice}`}>
     <Box
       sx={{
         flexWrap: "wrap",
@@ -25,6 +27,7 @@ const ProductCard = (product: any) => {
         flexDirection: "column",
         alignItems: "flex-start",
         width: "235px",
+        cursor:'pointer'
       }}
     >
       <Box
@@ -48,7 +51,7 @@ const ProductCard = (product: any) => {
       </Box>
       <Box
         component={"img"}
-        src={product.img}
+        src={props.img}
         sx={{
           width: "150px",
           alignSelf: "center",
@@ -68,7 +71,7 @@ const ProductCard = (product: any) => {
             ></Star>
           )
         )}
-        <p style={{ paddingLeft: "15px" }}>reviews({product.reviews})</p>
+        <p style={{ paddingLeft: "15px" }}>reviews({props.reviews})</p>
       </Box>
       <Box
         sx={{
@@ -78,7 +81,7 @@ const ProductCard = (product: any) => {
           fontSize: "14px",
         }}
       >
-        {product.title}
+        {props.title}
       </Box>
       <Box
         sx={{
@@ -97,17 +100,18 @@ const ProductCard = (product: any) => {
             fontSize: "14px",
           }}
         >
-          {`$ ${product.price}`}
+          {`$ ${props.price}`}
         </Box>
         <Box
           sx={{
             textDecorationColor: "black",
           }}
         >
-          {`$ ${product.price}`}
+          {`$ ${props.price}`}
         </Box>
       </Box>
     </Box>
+    </Link>
   );
 };
 

@@ -5,6 +5,8 @@ import HeroCarousel from '../components/HeroCarousel';
 
 
 
+
+
 const index = () => {
   return (
     <>
@@ -14,8 +16,9 @@ const index = () => {
       <TypeProducts index={1} /> 
       <TypeProducts index={2} /> 
       <TypeProducts index={3} /> 
-
       <Sponsors />
+
+      
     </>
   );
 };

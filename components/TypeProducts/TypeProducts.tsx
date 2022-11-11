@@ -4,6 +4,7 @@ import ImageCard from './ImageCard';
 import typeProducts from '../../src/constants/typeProducts'
 import NavProducts from './NavProducts'; 
 import { Box } from '@mui/material';
+import MuiTabs from './MuiTapbs';
 
 
 
@@ -16,35 +17,31 @@ const TypeProducts = (props:any) => {
   return (
     <Box>
        
-       {
+      {/* {
         allProducts[1].specs? <NavProducts in={(props.index) -1}  /> : null
-       }
+      } */}
+        
+      
+
       
       <Container maxWidth="sm" sx={{
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
         margin:'1rem'
-        }}>
-        
+      }}>
         
         <ImageCard name={typeItems.name} img={typeItems.img} url={typeItems.url}/>
-        
-        {/* {
-          products.map((product, i)=>{
-            if(i>=5 ) return false
-            return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
-          })
-
-        } */}
-        
+        {
+          allProducts[1].specs? <MuiTabs ind={(props.index) -1}  /> : null
+        }
 
         {
-          allProducts.map((product, i)=>{
-            if(i>=5 ) return false
-            return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
-                                    
-          })
+          !allProducts[1].specs?
+            allProducts.map((product, i)=>{
+              if(i>=5 ) return false
+              return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>                      
+            }) : false
         }
       </Container>
     </Box>

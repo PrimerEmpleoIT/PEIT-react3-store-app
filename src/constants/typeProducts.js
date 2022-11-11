@@ -63,6 +63,24 @@ const typeProducts = [
         name:'MSI Laptop',
         img:'https://i.ibb.co/CnTsmsW/laptop.png',
         url:'#',
+        types:[
+        {
+            id:0,
+            name:'MSI GS Series',
+            url:'#'
+        },{
+            id:1,
+            name:'MSI GT Series',
+            url:'#'
+        },{
+            id:2,
+            name:'MSI GL Series',
+            url:'#'
+        },{
+            id:3,
+            name:'MSI GF Series',
+            url:'#'
+        }],
         products:[
             {
                 id: 1,
@@ -273,6 +291,24 @@ const typeProducts = [
         name:'Desktops',
         img:'https://i.ibb.co/4FsdTVZ/desktop.png',
         url:'#',
+        types:[
+        {
+            id:0,
+            name:'MSI Infinute Series',
+            url:'#'
+        },{
+            id:1,
+            name:'MSI Triden',
+            url:'#'
+        },{
+            id:2,
+            name:'MSI GL Series',
+            url:'#'
+        },{
+            id:3,
+            name:'MSI Nightblade',
+            url:'#'
+        }],
         products:[
             {
                 id: 1,

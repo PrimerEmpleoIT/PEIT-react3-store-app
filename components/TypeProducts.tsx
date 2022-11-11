@@ -26,7 +26,7 @@ const TypeProducts = (props:any) => {
       {
         products.map((product, i)=>{
           if(i>=5 ) return false
-          return <ProductCard key={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
+          return <ProductCard key={i} indice={i} rate={product.rate} stock={product.stock} img={product.img} reviews={product.reviews}  title={product.title}  price={product.price}/>
         })
       }
     </Container>

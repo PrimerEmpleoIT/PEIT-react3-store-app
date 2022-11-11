@@ -7,9 +7,11 @@ import { Button } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
+import Link from "next/link";
 
 const ProductCard = (product: any) => {
   const [isHover, setIsHover] = useState(false);
+  let {indice,img,title,stock,price} = product;
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -19,7 +21,6 @@ const ProductCard = (product: any) => {
   };
 
   let max = product.rate; // max tiene que ser la puntuacion del producto
-  let stock = product.stock;
   let colorStyle = product.stock ? "#78A962" : "#C94D3F";
   let reviews = [];
   for (let i = 0; i < max; i++) {
@@ -32,6 +33,7 @@ const ProductCard = (product: any) => {
 
   if (isHover) {
     return (
+      <Link href={`/product/${indice}`}>
       <Box
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -113,7 +115,7 @@ const ProductCard = (product: any) => {
         </Box>
         <Box
           component={"img"}
-          src={product.img}
+          src={img}
           sx={{
             marginRight: "1em",
             width: "150px",
@@ -134,7 +136,7 @@ const ProductCard = (product: any) => {
               ></Star>
             )
           )}
-          <p style={{ paddingLeft: "15px" }}>reviews({product.reviews})</p>
+          <p style={{ paddingLeft: "15px" }}>reviews({reviews})</p>
         </Box>
         <Box
           sx={{
@@ -144,7 +146,7 @@ const ProductCard = (product: any) => {
             fontSize: "14px",
           }}
         >
-          {product.title}
+          {title}
         </Box>
         <Box
           sx={{
@@ -163,14 +165,14 @@ const ProductCard = (product: any) => {
               fontSize: "14px",
             }}
           >
-            {`$ ${product.price}`}
+            {`$ ${price}`}
           </Box>
           <Box
             sx={{
               textDecorationColor: "black",
             }}
           >
-            {`$ ${product.price}`}
+            {`$ ${price}`}
           </Box>
         </Box>
         <Box
@@ -196,6 +198,7 @@ const ProductCard = (product: any) => {
           </Button>
         </Box>
       </Box>
+      </Link>
     );
   } else {
     return (
@@ -235,7 +238,7 @@ const ProductCard = (product: any) => {
         </Box>
         <Box
           component={"img"}
-          src={product.img}
+          src={img}
           sx={{
             width: "150px",
             marginRight: "1em",
@@ -256,7 +259,7 @@ const ProductCard = (product: any) => {
               ></Star>
             )
           )}
-          <p style={{ paddingLeft: "15px" }}>reviews({product.reviews})</p>
+          <p style={{ paddingLeft: "15px" }}>reviews({reviews})</p>
         </Box>
         <Box
           sx={{
@@ -266,7 +269,7 @@ const ProductCard = (product: any) => {
             fontSize: "14px",
           }}
         >
-          {product.title}
+          {title}
         </Box>
         <Box
           sx={{
@@ -285,14 +288,14 @@ const ProductCard = (product: any) => {
               fontSize: "14px",
             }}
           >
-            {`$ ${product.price}`}
+            {`$ ${price}`}
           </Box>
           <Box
             sx={{
               textDecorationColor: "black",
             }}
           >
-            {`$ ${product.price}`}
+            {`$ ${price}`}
           </Box>
         </Box>
       </Box>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { Box } from "@mui/system";
 import products from "../../src/constants/products";
+import ProductInfo from '../../components/Product/ProductInfo';
 
 export default function Product(){
     const [product, setProduct] = useState<{
@@ -34,7 +35,7 @@ export default function Product(){
                 flexDirection:'column',
                 alignItems:'center'
             }}>
-
+                <ProductInfo product={product}/>
             </Box>
             }
         </Box>

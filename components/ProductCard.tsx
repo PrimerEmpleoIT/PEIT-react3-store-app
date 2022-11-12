@@ -8,8 +8,10 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { ProductType } from "../src/types/products";
+import { useStores } from "../store/root-store-context";
 
 const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
+  const { cartStore } = useStores();
   const [isHover, setIsHover] = useState(false);
 
   const handleMouseEnter = () => {
@@ -198,6 +200,7 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
                 border: "2px solid #0156FF",
                 borderRadius: "50px",
               }}
+              onClick={() => cartStore.addProduct(product.id)}
             >
               <AddShoppingCartIcon
                 sx={{ width: "18.72px", height: "16.67px" }}

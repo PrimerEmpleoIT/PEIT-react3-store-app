@@ -36,7 +36,7 @@ const IndexPage = () => {
       {/** <Hero></Hero> */}
       <HeroCarousel />
 
-      {products && <NewProductsSlider products={products} />}
+      {products && !loading && <NewProductsSlider products={products} />}
 
       <TypeProducts index={4} />
       <NavProducts in={0} />

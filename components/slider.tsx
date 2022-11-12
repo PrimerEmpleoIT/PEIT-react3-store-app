@@ -2,11 +2,13 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProductCard from "./ProductCard";
-import products from "../src/constants/products";
 import { Box } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { ProductType } from "../src/types/products";
 
-const NewProductsSlider = () => {
+const NewProductsSlider: React.FC<{ products: ProductType[] }> = ({
+  products,
+}) => {
   const mobile = useMediaQuery("(min-width:400px)");
   const tablet = useMediaQuery("(min-width:900px)");
   let responsiveWidth = 1400;
@@ -83,17 +85,8 @@ const NewProductsSlider = () => {
         slidesToSlide={1}
         swipeable
       >
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            indice={product.id}
-            rate={product.rate}
-            stock={product.stock}
-            img={product.img}
-            reviews={product.reviews}
-            title={product.title}
-            price={product.price}
-          ></ProductCard>
+        {products.map((product: ProductType) => (
+          <ProductCard key={`product-slider-${product.id}`} product={product} />
         ))}
       </Carousel>
     </Box>

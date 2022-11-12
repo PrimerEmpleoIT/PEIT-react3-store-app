@@ -1,12 +1,9 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Menu,
-  MenuItem,
-  Typography,
-} from "@mui/material";
 import React from "react";
+import { Box, Divider, Menu, Typography } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import EditIcon from "@mui/icons-material/Edit";
+import { CustomBtn } from "../buttons";
+import { ActionBtn } from "../buttons/Actions";
 
 interface CartProps {
   anchorElemCart: null | HTMLElement;
@@ -38,30 +35,32 @@ const Cart: React.FC<CartProps> = (props) => {
           2 item in cart
         </Typography>
 
-        <Button
-          sx={{
-            backgroundColor: "#FFF",
-            color: "#0156ff",
-            borderRadius: "35px",
-            border: "2px solid #0156ff",
-            width: "250px",
-            height: "37px",
-            margin: "17.8px 0 20.23px 0",
-            ":hover": {
-              backgroundColor: "#0156ff",
-              color: "#FFF",
-              transition: "0.6s",
-            },
-          }}
-          onClick={() => console.log("view or edit")}
+        <CustomBtn
+          isPrimary
+          handleOnClick={() => console.log("view or edit")}
+          text="View or Edit Your Cart"
+        />
+        <Divider style={{ width: "100%" }} />
+        <CartItem />
+        <Divider style={{ width: "100%" }} />
+        <CartItem />
+        <Divider style={{ width: "100%" }} />
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt="16px"
         >
-          View or Edit Your Cart
-        </Button>
-        <Divider style={{ width: "100%" }} />
-        <CartItem />
-        <Divider style={{ width: "100%" }} />
-        <CartItem />
-        <Divider style={{ width: "100%" }} />
+          <Typography fontSize="14px">Subtotal:&nbsp;</Typography>
+          <Typography fontSize="18px" fontWeight="600">
+            $500.00
+          </Typography>
+        </Box>
+        <CustomBtn
+          isPrimary={false}
+          handleOnClick={() => console.log("Go to Checkout")}
+          text="Go to Checkout"
+        />
       </Box>
     </Menu>
   );
@@ -85,6 +84,21 @@ const CartItem: React.FC = () => {
         <Typography fontSize="13px">
           EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
         </Typography>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        gap="6px"
+      >
+        <ActionBtn
+          icon={<CloseIcon sx={{ fontSize: "18px" }} />}
+          handleOnClick={() => console.log("remove")}
+        />
+        <ActionBtn
+          icon={<EditIcon sx={{ fontSize: "14px" }} />}
+          handleOnClick={() => console.log("edit")}
+        />
       </Box>
     </Box>
   );

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { Box } from "@mui/system";
 import ProductInfo from '../../components/Product/ProductInfo';
+import ProductSupport from '../../components/Product/ProductSupport';
 
 export default function Product(){
     const [product, setProduct] = useState<{
@@ -41,6 +42,7 @@ export default function Product(){
                 <ProductInfo product={product}/>
             </Box>
             }
+            <ProductSupport/>
         </Box>
     )
 }

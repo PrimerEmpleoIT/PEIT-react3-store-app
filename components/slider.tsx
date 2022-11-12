@@ -86,6 +86,7 @@ const NewProductsSlider = () => {
         {products.map((product) => (
           <ProductCard
             key={product.id}
+            indice={product.id}
             rate={product.rate}
             stock={product.stock}
             img={product.img}

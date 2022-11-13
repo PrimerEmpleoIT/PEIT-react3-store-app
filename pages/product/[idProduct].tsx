@@ -39,6 +39,8 @@ export default function Product(){
                 <ProductInfo product={product}/>
             </Box>
             }
+            <ProductSupport/>
+            <FeatureCard/>
         </Box>
     )
 }

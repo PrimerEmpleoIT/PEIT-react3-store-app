@@ -33,6 +33,7 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
         alignItems: "center",
         margin: "1rem",
         width: "100%",
+        maxWidth:'1398px'
       }}
     >
       <ImageCard
@@ -50,6 +51,7 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
         products.slice(0, 5).map((product) => (
           <ProductCard
             key={`product-${product.id}`}
+            indice={product.id}
             rate={3}
             stock={product.stock > 0}
             img={product.images}

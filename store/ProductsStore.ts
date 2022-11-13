@@ -21,6 +21,13 @@ export const ProductsStore = types
     products: types.array(Product),
     lastUpdate: types.Date,
   })
+  .views((self) => ({
+    productsFromCart(cart: { productId: number; quantity: number }[]) {
+      return self.products.filter((product) =>
+        cart.some((item) => item.productId === product.id)
+      );
+    },
+  }))
   .actions((self) => {
     function updateProducts(products: any) {
       self.products = products;
@@ -33,7 +40,9 @@ export const ProductsStore = types
   .actions((self) => ({
     getProducts: async () => {
       const response = await productsApi.getProducts();
-      self.updateProducts(response);
+      if (!response.kind) {
+        self.updateProducts(response);
+      }
     },
   }));
 

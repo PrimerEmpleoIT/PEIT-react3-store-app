@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { Box } from "@mui/system";
 import ProductInfo from '../../components/Product/ProductInfo';
+import FeatureCard from '../../components/Product/FeatureCard';
 
 export default function Product(){
     const [product, setProduct] = useState<{
@@ -33,14 +34,11 @@ export default function Product(){
         <Box>
             {(product==null)
             ?<h1>Cargando el producto</h1>
-            :<Box sx={{
-                display:'flex',
-                flexDirection:'column',
-                alignItems:'center'
-            }}>
+            :<Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
                 <ProductInfo product={product}/>
             </Box>
             }
+            <FeatureCard/>
         </Box>
     )
 }

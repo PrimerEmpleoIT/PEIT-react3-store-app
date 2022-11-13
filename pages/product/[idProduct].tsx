@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { Box } from "@mui/system";
 import ProductInfo from '../../components/Product/ProductInfo';
+import ProductSupport from '../../components/Product/ProductSupport';
 import FeatureCard from '../../components/Product/FeatureCard';
 
 export default function Product(){
@@ -38,6 +39,7 @@ export default function Product(){
                 <ProductInfo product={product}/>
             </Box>
             }
+            <ProductSupport/>
             <FeatureCard/>
         </Box>
     )

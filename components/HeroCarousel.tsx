@@ -1,37 +1,34 @@
-import React from 'react'
+import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Box } from '@mui/system';
-import hero from '../src/constants/hero'
-import Image from 'next/image';
+import { Box } from "@mui/system";
+import hero from "../src/constants/hero";
+import Image from "next/image";
 
-const HeroCarousel = (props : any) => {
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+const HeroCarousel = (props: any) => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
-
     <Box sx={{ maxWidth: "1398px", margin: "auto" }}>
-
-    
-    <Carousel  
+      <Carousel
         additionalTransfrom={0}
         arrows
         autoPlay
@@ -51,27 +48,27 @@ const responsive = {
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
         responsive={{
-            desktop: {
+          desktop: {
             breakpoint: {
-                max: 3000,
-                min: 1024
+              max: 3000,
+              min: 1024,
             },
-            items: 1
-            },
-            mobile: {
+            items: 1,
+          },
+          mobile: {
             breakpoint: {
-                max: 464,
-                min: 0
+              max: 464,
+              min: 0,
             },
-            items: 1
-            },
-            tablet: {
+            items: 1,
+          },
+          tablet: {
             breakpoint: {
-                max: 1024,
-                min: 464
+              max: 1024,
+              min: 464,
             },
-            items: 1
-            }
+            items: 1,
+          },
         }}
         rewind={false}
         rewindWithAnimation={false}
@@ -81,33 +78,26 @@ const responsive = {
         sliderClass=""
         slidesToSlide={1}
         swipeable
-        >
-        
-
-        {
-          hero.map((data)=>{
-            return(
+      >
+        {hero.map((data) => {
+          return (
             <Box
-                key={data.id}
-                component={"img"}
-                src={data.img}
-                alt = {data.name}
-                sx={{ display: 'block',
-                height: '100%',
-                margin: 'auto',
-                width: '100%'
-                      
-                    }}
-              />
-              )
-          })
-        }
-       
-        
-        </Carousel>
+              key={data.id}
+              component={"img"}
+              src={data.img}
+              alt={data.name}
+              sx={{
+                display: "block",
+                height: "100%",
+                margin: "auto",
+                width: "100%",
+              }}
+            />
+          );
+        })}
+      </Carousel>
     </Box>
+  );
+};
 
-  )
-}
-
-export default HeroCarousel
+export default HeroCarousel;

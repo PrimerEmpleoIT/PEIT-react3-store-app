@@ -1,29 +1,11 @@
-/* import Hero from "../components/Hero"; */
-import { useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import Sponsors from "../components/Sponsors";
 import NewProductsSlider from "../components/slider";
 import TypeProducts from "../components/TypeProducts";
 import NavProducts from "../components/NavProducts";
 import HeroCarousel from "../components/HeroCarousel";
-import { ProductType } from "../src/types/products";
-import { productsApi } from "../src/services/productsApi";
 
 const IndexPage = () => {
-  const [products, setProducts] = useState<ProductType[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  const getCategoy = async () => {
-    setLoading(true);
-    const response = await productsApi.getProducts();
-    setProducts(response);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    getCategoy();
-  }, []);
-
   return (
     <Box
       sx={{
@@ -36,7 +18,7 @@ const IndexPage = () => {
       {/** <Hero></Hero> */}
       <HeroCarousel />
 
-      {products && !loading && <NewProductsSlider products={products} />}
+      <NewProductsSlider />
 
       <TypeProducts index={4} />
       <NavProducts in={0} />

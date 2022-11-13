@@ -6,6 +6,7 @@ import {
   types,
 } from "mobx-state-tree";
 import { createCartDefaultModel } from "./CartStore";
+import { createProductsDefaultModel } from "./ProductsStore";
 
 export const resetStore = (self: any) => {
   // TODO: fix anys
@@ -24,6 +25,7 @@ export const RootStoreModel = types
   .model("RootStore")
   .props({
     cartStore: types.optional(createCartDefaultModel(), {}),
+    productsStore: createProductsDefaultModel(),
   })
   .actions(resetStore);
 

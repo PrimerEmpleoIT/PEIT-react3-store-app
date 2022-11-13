@@ -1,19 +1,15 @@
-import * as React from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmootionCache";
-import { Box } from "@mui/system";
 import persist from "mst-persist";
-import Footer from "../components/Footer";
-import Navbar from "../components/navbar/Navbar";
-import ServiceCards from "../components/ServiceCards";
-import Header from "../components/Header";
-import Testimonials from "../components/Testimonials";
 import { RootStoreProvider } from "../store/root-store-context";
 import { rootStore } from "../store/root-store";
+import Layout from "../components/layouts/main";
+
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -33,23 +29,9 @@ export default function MyApp(props) {
         <RootStoreProvider value={rootStore}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              minHeight: "100vh",
-              alignItems: "center",
-            }}
-          >
-            <Header />
-            <Navbar />
-            <Box sx={{ flexGrow: 1 }}>
-              <Component {...pageProps} />
-            </Box>
-            <Testimonials />
-            <ServiceCards />
-            <Footer />
-          </Box>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </RootStoreProvider>
       </ThemeProvider>
     </CacheProvider>

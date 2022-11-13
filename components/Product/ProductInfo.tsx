@@ -54,39 +54,39 @@ export default function ProductInfo(props: any){
     return(
         <Box sx={{maxWidth:'1398px',minWidth:'100vw',display:'flex',alignItems:'center'}}>
             {movil
-            ?<Box sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',margin:'0 auto'}}>
+            ?<Box sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',margin:'0 auto',width:'100vw'}}>
                 <Box sx={{width:'100%',display:'flex',alignItems:'flex-start',margin:'auto',marginTop:'1rem',position:'relative'}}>
-                    <Box  sx={{position:'absolute',left:'1rem',top:'0'}}>
+                    <Box  sx={{position:'absolute',left:'2rem',top:'0'}}>
                         <FavoriteBorderIcon fontSize={'large'} />
                     </Box>
-                    <Box sx={{position:'absolute',left:'1rem',top:'3rem'}}>
+                    <Box sx={{position:'absolute',left:'2rem',top:'3rem'}}>
                         <BarChartIcon  fontSize={'large'} />
                     </Box>
-                    <Box sx={{position:'absolute',left:'1rem',top:'6rem'}}>
+                    <Box sx={{position:'absolute',left:'2rem',top:'6rem'}}>
                         <MailOutlineIcon  fontSize={'large'} />
                     </Box>
-                    <Box sx={{width:'60%',margin:'0 auto'}} component={"img"} src={`${images}`}></Box>
+                    <Box sx={{maxWidth:'300px',margin:'0 auto'}} component={"img"} src={`${images}`}></Box>
                 </Box>
-                <Box sx={{padding:'1rem'}}>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                        <Tab label="About Product" {...a11yProps(0)} />
-                        <Tab label="Details" {...a11yProps(1)} />
-                        <Tab label="Specs" {...a11yProps(2)} />
-                    </Tabs>
-                </Box>
-                <Typography variant={'h6'}>{title}</Typography>
-                <a style={{textDecoration:'none'}} href={"#"}>Be the first to review this product</a>
-                <TabPanel value={value} index={0}>
-                    <Typography component={'p'}>{description}</Typography>    
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    <Typography component={'p'}>{details}</Typography> 
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    <ul>
-                    </ul>
-                </TabPanel>
+                <Box sx={{padding:'1rem',width:'100%',display:'flex',flexDirection:'column'}}>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider', margin:'0 auto' }}>
+                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                            <Tab label="About Product" {...a11yProps(0)} />
+                            <Tab label="Details" {...a11yProps(1)} />
+                            <Tab label="Specs" {...a11yProps(2)} />
+                        </Tabs>
+                    </Box>
+                    <Typography variant={'h6'}>{title}</Typography>
+                    <a style={{textDecoration:'none'}} href={"#"}>Be the first to review this product</a>
+                    <TabPanel value={value} index={0}>
+                        <Typography component={'p'}>{description}</Typography>    
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        <Typography component={'p'}>{details}</Typography> 
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        <ul>
+                        </ul>
+                    </TabPanel>
                 </Box>
                 <Box sx={{display:'flex',flexDirection:'column',width:'100%',padding:'1rem'}}>
                     <Box sx={{display:'flex',justifyContent:'space-between',height:'4rem'}}>

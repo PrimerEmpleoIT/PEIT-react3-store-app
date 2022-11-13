@@ -4,19 +4,19 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 export default function ProductSupport(){
 
     return(
-        <Box sx={{width:'100%',maxWidth:'1398px',display:'flex'}}>
-            <Stack direction={'column'} spacing={1} >
-            <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'secondary'} fontSize={'medium'} />}>
+        <Box sx={{maxWidth:'1398px',display:'flex',position:'relative',margin:'0 auto',alignItems:'center',justifyContent:'center'}}>
+            <Stack sx={{position:'absolute',left:'10rem',justifyContent:'center'}} direction={'column'} spacing={1} >
+            <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'primary'} fontSize={'medium'} />}>
                 Product Support
             </Button>
-            <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'secondary'} fontSize={'medium'} />}>
-                Send
+            <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'primary'} fontSize={'medium'} />}>
+                FAQ
             </Button>
-            <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'secondary'} fontSize={'medium'} />}>
-                Send
+            <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'primary'} fontSize={'medium'} />}>
+                Our Buyer Guide
             </Button>
             </Stack >
-            <Box component={'img'} src={'https://blog.hubspot.es/hubfs/media/servicioalclienteadistancia.jpeg'}></Box>
+            <Box sx={{maxWidth:'656px'}} component={'img'} src={'https://www.mark-petrie.com/wp-content/uploads/2018/07/telefonos-asistencia-motivo-1.jpg'}></Box>
         </Box>
     )
 }

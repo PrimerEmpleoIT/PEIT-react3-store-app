@@ -9,16 +9,15 @@ import HeroCarousel from "../components/HeroCarousel";
 const IndexPage = () => {
   return (
     <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "100vw",
-      }}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      width: "100vw",
+    }}
     >
-      {/** <Hero></Hero> */}
-      <HeroCarousel />
 
+      <HeroCarousel />
       <NewProductsSlider />
 
       <TypeProducts index={4} />

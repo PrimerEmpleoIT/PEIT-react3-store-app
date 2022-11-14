@@ -33,7 +33,7 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
         alignItems: "center",
         margin: "1rem",
         width: "100%",
-        maxWidth:'1398px'
+        maxWidth: "1398px",
       }}
     >
       <ImageCard

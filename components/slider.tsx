@@ -1,14 +1,18 @@
 import React from "react";
+import { observer } from "mobx-react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProductCard from "./ProductCard";
-import products from "../src/constants/products";
 import { Box } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { ProductType } from "../src/types/products";
+import { useStores } from "../store/root-store-context";
 
-const NewProductsSlider = () => {
+const NewProductsSlider: React.FC = () => {
+  const { productsStore } = useStores();
   const mobile = useMediaQuery("(min-width:400px)");
   const tablet = useMediaQuery("(min-width:900px)");
+
   let responsiveWidth = 1400;
   if (!tablet && mobile) {
     responsiveWidth = 850;
@@ -83,21 +87,15 @@ const NewProductsSlider = () => {
         slidesToSlide={1}
         swipeable
       >
-        {products.map((product) => (
+        {productsStore.products.map((product) => (
           <ProductCard
-            key={product.id}
-            indice={product.id}
-            rate={product.rate}
-            stock={product.stock}
-            img={product.img}
-            reviews={product.reviews}
-            title={product.title}
-            price={product.price}
-          ></ProductCard>
+            key={`product-slider-${product.id}`}
+            product={product as ProductType}
+          />
         ))}
       </Carousel>
     </Box>
   );
 };
 
-export default NewProductsSlider;
+export default observer(NewProductsSlider);

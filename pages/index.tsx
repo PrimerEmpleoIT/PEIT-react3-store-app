@@ -1,4 +1,3 @@
-/* import Hero from "../components/Hero"; */
 import { Box } from "@mui/system";
 import Sponsors from "../components/Sponsors";
 import NewProductsSlider from "../components/slider";

@@ -45,7 +45,7 @@ const responsive = {
 
   return (
 
-    <Box maxWidth={responsiveWidth} sx={{ margin: "auto" }}>
+    <Box width={responsiveWidth} sx={{ margin: "auto" }}>
 
     
     <Carousel  
@@ -94,6 +94,8 @@ const responsive = {
                       
                     }}
               />
+              
+              
               )
           })
         }

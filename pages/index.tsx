@@ -6,6 +6,7 @@ import TypeProducts from "../components/TypeProducts";
 import NavProducts from "../components/NavProducts";
 import HeroCarousel from "../components/HeroCarousel";
 
+
 const IndexPage = () => {
   return (
     <Box
@@ -16,7 +17,7 @@ const IndexPage = () => {
       width: "100vw",
     }}
     >
-
+      
       <HeroCarousel />
       <NewProductsSlider />
 

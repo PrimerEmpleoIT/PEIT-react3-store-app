@@ -1,27 +1,15 @@
 import Link from 'next/link';
 import { Box } from '@mui/system';
-import {Typography, styled} from '@mui/material';
+import {Typography, styled, useMediaQuery} from '@mui/material';
 import navCategory from '../src/constants/navCategory'
 
 
 
 const NavProducts = (props:any) => {
-
+  const bigger =  useMediaQuery("(min-width:900px)")
   let section:any = navCategory[props.in]
 
-  const Text = styled(Typography)`
-
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 130%;    
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    ` 
   const Content = styled(Box)`
-    margin-right: 3rem;
     :hover{
       border-bottom:2px solid #0156FF ;
     }
@@ -33,17 +21,17 @@ const NavProducts = (props:any) => {
     <Box sx={{
       display:'flex',
       flexDirection:'row',
-      margin:'0 auto',
-      marginLeft:'3rem'
+      justifyContent:'flex-start',
+      alignContent:'flex-start',
+      maxWidth:'1398px',
+      width:'100%',
+      textAlign:'left'
     }}>
-      
-
       {
-
           /* console.log('section', section)
           console.log('section-items', section.items) */
           section.items.map((subSection:any, j:number)=>{
-            return ( <Content key={j}> <Link href={subSection.url}><Text>{subSection.name}</Text></Link> </Content>)  
+            return ( <Content sx={{cursor:'pointer'}} key={j}> <Link href={subSection.url}><Typography  fontSize={bigger?'20px':'16px'} sx={{fontWeight:'600',lineHeight:'20px',marginLeft:'1rem'}}>{subSection.name}</Typography ></Link> </Content>)  
           })
           
           

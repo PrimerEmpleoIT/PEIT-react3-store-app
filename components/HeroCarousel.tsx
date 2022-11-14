@@ -3,31 +3,46 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Box } from "@mui/system";
 import hero from "../src/constants/hero";
-import Image from "next/image";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const HeroCarousel = (props: any) => {
+  const mobile = useMediaQuery("(min-width:400px)");
+  const tablet = useMediaQuery("(min-width:900px)");
+  let responsiveWidth = 1400;
+  if (!tablet && mobile) {
+    responsiveWidth = 850;
+  } else if (!mobile) {
+    responsiveWidth = 390;
+  } else if (tablet && mobile) {
+    responsiveWidth = 1400;
+  }
+
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      breakpoint: {
+        max: 3000,
+        min: 1024,
+      },
+      items: 1,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: {
+        max: 464,
+        min: 0,
+      },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464,
+      },
       items: 1,
     },
   };
 
   return (
-    <Box sx={{ maxWidth: "1398px", margin: "auto" }}>
+    <Box width={responsiveWidth} sx={{ margin: "auto" }}>
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -47,29 +62,7 @@ const HeroCarousel = (props: any) => {
         renderArrowsWhenDisabled={false}
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 3000,
-              min: 1024,
-            },
-            items: 1,
-          },
-          mobile: {
-            breakpoint: {
-              max: 464,
-              min: 0,
-            },
-            items: 1,
-          },
-          tablet: {
-            breakpoint: {
-              max: 1024,
-              min: 464,
-            },
-            items: 1,
-          },
-        }}
+        responsive={responsive}
         rewind={false}
         rewindWithAnimation={false}
         rtl={false}

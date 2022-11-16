@@ -9,60 +9,62 @@ interface  TImageCard {
 
 
 const ImageCard = ({img,name,url}:TImageCard) => {
-  const isSmallerTablet = useMediaQuery("(max-width:768px)")
+  const isMobile = useMediaQuery("(min-width:500px)")
   return (
-    <div>
-      <Box sx={{
-            position:'absolute',
-            zIndex:1,
-            
-        }}>
-            {/* <Image 
-                src={img} 
-                alt={name} 
-                layout='fill'
-                style={{
-                    position:'absolute',                
-                }}/>
-              /* <div>{img}</div> */ }
-
+  
+    <Box>
+      <Box>
         <Box
-          component={"img"}
-          src={img}
-          sx={{ position:'absolute' }}
-          />
-        </Box>
+            component={"img"}
+            src={img}
+            width={isMobile ? '233px':'345px' }
+            height={isMobile ? '350px' : '82px'}
+            sx={{ position:'absolute' }}
+          >
 
-        <Box sx={{
-            zIndex:3,
-            position:'relative', 
-            color:'#ffffff',
-            display:'flex',
-            flexDirection:'column',
-            width:'233px',
-            height:'350px',
-            alignItems: 'center',
-            textAlign: 'center',
-            justifyContent:'space-between'
-        }}>
             
-            <Box sx={{
+          </Box>
+
+        </Box>
+        <Box 
+          width={isMobile ? '233px':'345px' }
+          height={isMobile ? '350px' : '82px'}
+          sx={{
+              zIndex:3,
+              position:'relative', 
+              color:'#ffffff',
+              display:'flex',
+              flexDirection:'column',
+              /* width:'233px',
+              height:'350px', */
+              alignItems: 'center',
+              textAlign: 'center',
+              justifyContent:'space-between'
+          }}>
+            
+            <Box 
+              paddingTop={isMobile? '8rem': '-5px'}
+              fontSize={isMobile? '30px': '18px'}
+            sx={{
               fontWeight: '700',
               fontSize: '30px',
               display: 'flex',
               alignItems: 'center',
               textAlign: 'center',
               justifyContent:'center',
-              paddingTop:'8rem'
+              /* paddingTop:'8rem' */
               
              }}>{name}</Box>
 
-            <Box sx={{
-              fontSize: '18px',
+            <Box 
+            paddingBottom={isMobile? '2rem': '1rem'}
+            fontSize={isMobile? '18px': '16px'}
+            sx={{
+              /* fontSize: '18px', */
               lineHeight: '100%',
               display: 'flex',
               textDecorationLine: 'underline',
-              paddingBottom:'2rem'
+              /* paddingBottom:'2rem' */
             }}>
               <Link href={url} >
                 <a style={{color:'#ffffff'}}>See All Products</a>
@@ -71,7 +73,7 @@ const ImageCard = ({img,name,url}:TImageCard) => {
             </Box>
       </Box>
         
-    </div>
+    </Box>
   )
 }
 

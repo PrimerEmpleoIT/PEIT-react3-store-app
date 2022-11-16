@@ -6,7 +6,7 @@ import hero from "../src/constants/hero";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const HeroCarousel = (props: any) => {
-  const mobile = useMediaQuery("(min-width:400px)");
+  const mobile = useMediaQuery("(min-width:500px)");
   const tablet = useMediaQuery("(min-width:900px)");
   let responsiveWidth = 1400;
   if (!tablet && mobile) {
@@ -17,26 +17,18 @@ const HeroCarousel = (props: any) => {
     responsiveWidth = 1400;
   }
 
+
   const responsive = {
     desktop: {
-      breakpoint: {
-        max: 3000,
-        min: 1024,
-      },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: {
-        max: 464,
-        min: 0,
-      },
+      breakpoint: { max: 3000, min: 1024 },
       items: 1,
     },
     tablet: {
-      breakpoint: {
-        max: 1024,
-        min: 464,
-      },
+      breakpoint: { max: 900, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 390, min: 0 },
       items: 1,
     },
   };

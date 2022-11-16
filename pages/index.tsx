@@ -4,7 +4,7 @@ import NewProductsSlider from "../components/slider";
 import TypeProducts from "../components/TypeProducts";
 import NavProducts from "../components/NavProducts";
 import HeroCarousel from "../components/HeroCarousel";
-
+import ZypComponent from "../components/ZypComponent"
 
 const IndexPage = () => {
   return (
@@ -19,7 +19,7 @@ const IndexPage = () => {
       
       <HeroCarousel />
       <NewProductsSlider />
-
+      <ZypComponent />
       <TypeProducts index={4} />
       <NavProducts in={0} />
 

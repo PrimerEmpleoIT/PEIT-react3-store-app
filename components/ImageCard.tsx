@@ -9,7 +9,7 @@ interface  TImageCard {
 
 
 const ImageCard = ({img,name,url}:TImageCard) => {
-  const isSmallerTablet = useMediaQuery("(max-width:768px)")
+  const isMobile = useMediaQuery("(min-width:500px)")
   return (
     <div>
       <Box sx={{
@@ -17,14 +17,6 @@ const ImageCard = ({img,name,url}:TImageCard) => {
             zIndex:1,
             
         }}>
-            {/* <Image 
-                src={img} 
-                alt={name} 
-                layout='fill'
-                style={{
-                    position:'absolute',                
-                }}/>
-              /* <div>{img}</div> */ }
 
         <Box
           component={"img"}
@@ -33,7 +25,9 @@ const ImageCard = ({img,name,url}:TImageCard) => {
           />
         </Box>
 
-        <Box sx={{
+        <Box 
+          
+        sx={{
             zIndex:3,
             position:'relative', 
             color:'#ffffff',

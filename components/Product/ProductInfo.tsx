@@ -9,6 +9,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import PaymentIcon from '@mui/icons-material/Payment';
+import PhotoProduct from './PhotoProduct';
+import PayComponent from './PayComponent';
+import TabProduct from './TabProduct';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,7 +48,7 @@ function a11yProps(index: number) {
 
 export default function ProductInfo(props: any){
     const [value, setValue] = React.useState(0);
-    const movil = useMediaQuery("(max-width:768px)");
+    const tablet = useMediaQuery("(min-width:768px)")
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
@@ -53,59 +56,13 @@ export default function ProductInfo(props: any){
     let {title,description,details,specs,images,price,createdat,stock,category} = props.product;
     return(
         <Box sx={{maxWidth:'1398px',minWidth:'100vw',display:'flex',alignItems:'center'}}>
-            {movil
-            ?<Box sx={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',margin:'0 auto',width:'100vw'}}>
-                <Box sx={{width:'100%',display:'flex',alignItems:'flex-start',margin:'auto',marginTop:'1rem',position:'relative'}}>
-                    <Box  sx={{position:'absolute',left:'2rem',top:'0'}}>
-                        <FavoriteBorderIcon fontSize={'large'} />
-                    </Box>
-                    <Box sx={{position:'absolute',left:'2rem',top:'3rem'}}>
-                        <BarChartIcon  fontSize={'large'} />
-                    </Box>
-                    <Box sx={{position:'absolute',left:'2rem',top:'6rem'}}>
-                        <MailOutlineIcon  fontSize={'large'} />
-                    </Box>
-                    <Box sx={{maxWidth:'300px',margin:'0 auto'}} component={"img"} src={`${images}`}></Box>
-                </Box>
-                <Box sx={{padding:'1rem',width:'100%',display:'flex',flexDirection:'column'}}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider', margin:'0 auto' }}>
-                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="About Product" {...a11yProps(0)} />
-                            <Tab label="Details" {...a11yProps(1)} />
-                            <Tab label="Specs" {...a11yProps(2)} />
-                        </Tabs>
-                    </Box>
-                    <Typography variant={'h6'}>{title}</Typography>
-                    <a style={{textDecoration:'none'}} href={"#"}>Be the first to review this product</a>
-                    <TabPanel value={value} index={0}>
-                        <Typography component={'p'}>{description}</Typography>    
-                    </TabPanel>
-                    <TabPanel value={value} index={1}>
-                        <Typography component={'p'}>{details}</Typography> 
-                    </TabPanel>
-                    <TabPanel value={value} index={2}>
-                        <ul>
-                        </ul>
-                    </TabPanel>
-                </Box>
-                <Box sx={{display:'flex',flexDirection:'column',width:'100%',padding:'1rem'}}>
-                    <Box sx={{display:'flex',justifyContent:'space-between',height:'4rem'}}>
-                        <Box>
-                            <label htmlFor="cant"></label>
-                            <input style={{height:'3rem',backgroundColor:'#F5F7FF',fontSize:'20px',textAlign:'center'}} type="number" id="cant" name="tentacles" defaultValue={1} min="1" max="5"></input>
-                        </Box>
-                        <Button sx={{height:'3rem'}} variant="contained">Add to cart</Button>
-                        <Button sx={{height:'3rem'}} variant="outlined" startIcon={<PaymentIcon />}>
-                            PayPal
-                        </Button>
-                    </Box>  
-                    <Box sx={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'#F5F7FF',width:'100%',padding:'1rem'}}>
-                        <Typography sx={{marginRight:'5px',fontSize:'16px'}}>On sale from</Typography>
-                        <Typography sx={{fontWeight:'bold',fontSize:'16px'}}>${price}</Typography>
-                    </Box>
-                </Box>
-            </Box>
-            :null}
+            {tablet
+            ?null
+            :<Box>
+                <PhotoProduct url={images}/>
+                <PayComponent price={price}/>
+                <TabProduct title={title} description={description} details={details} specs={specs}/>
+             </Box>}
         </Box>
     )
 }

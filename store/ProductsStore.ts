@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { types, Instance, SnapshotOut } from "mobx-state-tree";
+import Cart from "../components/navbar/Cart";
 import { productsApi } from "../src/services/productsApi";
 
 const Product = types.model("Product").props({
@@ -27,6 +28,9 @@ export const ProductsStore = types
         cart.some((item) => item.productId === product.id)
       );
     },
+    productById(id : number){
+      return self.products.filter((product) => product.id === id)
+    }
   }))
   .actions((self) => {
     function updateProducts(products: any) {

@@ -4,7 +4,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 export default function ProductSupport(){
 
     return(
-        <Box sx={{maxWidth:'1398px',display:'flex',position:'relative',margin:'0 auto',alignItems:'center',justifyContent:'center'}}>
+        <Box sx={{width:'100%',display:'flex',position:'relative',margin:'0 auto',alignItems:'center',justifyContent:'center'}}>
             <Stack sx={{position:'absolute',left:'10rem',justifyContent:'center'}} direction={'column'} spacing={1} >
             <Button variant="outlined" endIcon={<ArrowRightAltIcon color={'primary'} fontSize={'medium'} />}>
                 Product Support

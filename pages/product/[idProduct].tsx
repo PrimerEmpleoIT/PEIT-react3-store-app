@@ -5,34 +5,20 @@ import { Box } from "@mui/system";
 import ProductInfo from '../../components/Product/ProductInfo';
 import ProductSupport from '../../components/Product/ProductSupport';
 import FeatureCard from '../../components/Product/FeatureCard';
+import { useStores } from "../../store/root-store-context";
 
 export default function Product(){
-    const [product, setProduct] = useState<{
-        id: number,
-        title: string,
-        description: string,
-        details: string,
-        specs: object,
-        images: string,
-        price: number,
-        createdat:string,
-        stock: number,
-        category:number
-      }| null>(null);
+  const {  productsStore } = useStores();
     const router = useRouter();
-    const route = router.query.idProduct;
+    const route = (typeof(router.query.idProduct)==='string')?router.query.idProduct:'',
+    product = productsStore.productById(parseInt(route));
 
-    useEffect(() => {
-        fetch(`https://tech-store-api.onrender.com/products/${route}/?format=json`)
-          .then((res) => res.json())
-          .then((data) => {
-            setProduct(data)
-          })
-      }, [])
-    
+    console.log(route);
+    console.log(product)
+
 
     return(
-        <Box>
+        <Box sx={{display:'flex',flexDirection:'column',maxWidth:'1398px',minWidth:'100vw'}}>
             {(product==null)
             ?<h1>Cargando el producto</h1>
             :<Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>

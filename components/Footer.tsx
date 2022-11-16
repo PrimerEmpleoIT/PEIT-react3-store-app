@@ -11,6 +11,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Link from 'next/link';
 
 const re = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
@@ -124,7 +125,9 @@ const Footer = () => {
            </Typography>
            <Box>
              {block.items.map((item, i) => (
-               <Typography key={i} sx={{fontSize: '14px'}}>{item}</Typography>
+                <Link key={i} href={`/${item.replace(" ","").toLowerCase()}`}>
+                  <Typography sx={{fontSize: '14px',cursor:'pointer'}}>{item}</Typography>
+                </Link>
              ))}
            </Box>
          </Box>

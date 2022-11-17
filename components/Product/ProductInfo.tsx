@@ -55,10 +55,18 @@ export default function ProductInfo(props: any){
 
     let {title,description,details,specs,images,price,createdat,stock,category} = props.product;
     return(
-        <Box sx={{maxWidth:'1398px',minWidth:'100vw',display:'flex',alignItems:'center'}}>
+        <Box sx={{width:'100vw',maxWidth:'1398px',display:'flex',alignItems:'center'}}>
             {tablet
-            ?null
-            :<Box>
+            ?<Box sx={{display:'flex',width:'100%'}}>
+              <Box sx={{width:'50%'}}>
+                <TabProduct title={title} description={description} details={details} specs={specs}/>
+              </Box>
+              <Box sx={{width:'50%'}}>
+                <PayComponent price={price}/>
+                <PhotoProduct url={images}/>
+              </Box>
+            </Box>
+            :<Box sx={{display:'flex',flexDirection:'column',alignItems:'center',padding:'1rem'}}>
                 <PhotoProduct url={images}/>
                 <PayComponent price={price}/>
                 <TabProduct title={title} description={description} details={details} specs={specs}/>

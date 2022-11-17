@@ -8,16 +8,16 @@ export default function PayComponent(props : any){
     const tablet = useMediaQuery("(min-width:768px)")
 
     return(
-        <Box flexDirection={tablet?'row':'column'} sx={{display:'flex'}}>
-            <Box sx={{display:'flex'}}>
+        <Box flexDirection={tablet?'row-reverse':'column'} sx={{width:'100%',display:'flex'}}>
+            <Box sx={{width:'100%',display:'flex',marginTop:'.4rem',marginBottom:'.4rem'}} justifyContent={tablet?'center':'center'}>
                 <input type="number" id="tentacles" name="tentacles"
                 min="1" max="5" defaultValue={1}></input>
                 <Button variant={'contained'}>Add to chart</Button>
                 <Button variant={'contained'} startIcon={<PaymentIcon/>}>PayPal</Button>
             </Box>
-            <Typography>
-                On sale from {props.price}
-            </Typography>
+                <Typography sx={{textAlign:'center'}}>
+                    On sale from <span style={{fontWeight:'bold'}}>{props.price}</span>
+                </Typography>
         </Box>
     )
 }

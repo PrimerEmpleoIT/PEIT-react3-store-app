@@ -49,27 +49,31 @@ export default function TabProduct(props : any){
     const {specs,title,description,details} = props;
 
     return (
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%' ,padding:'1rem' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-              <Tab label="About Product" {...a11yProps(0)} />
-              <Tab label="Details" {...a11yProps(1)} />
-              <Tab label="Specs" {...a11yProps(2)} />
+              <Tab sx={{width:'30%'}} label="About Product" {...a11yProps(0)} />
+              <Tab sx={{width:'30%'}} label="Details" {...a11yProps(1)} />
+              <Tab sx={{width:'30%'}} label="Specs" {...a11yProps(2)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <Typography>
+            <Typography fontSize={'18px'}>
                 {title}
             </Typography>
-            <Typography>
+            <Typography fontSize={'18px'}>
                 {description}
-            </Typography>
+            </Typography >
           </TabPanel>
           <TabPanel value={value} index={1}>
-                {details}
+              <Typography  fontSize={'18px'}>
+                  {details}
+              </Typography>
           </TabPanel>
           <TabPanel value={value} index={2}>
-             specs
+              <Typography  fontSize={'18px'}>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas rem natus ullam voluptates maxime sed deserunt! Iste voluptatum odio dolores nulla, libero, tempora eaque neque nostrum, aspernatur numquam sed quidem?
+              </Typography>
           </TabPanel>
         </Box>
       );

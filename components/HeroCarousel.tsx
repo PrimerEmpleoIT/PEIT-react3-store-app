@@ -34,7 +34,7 @@ const HeroCarousel = (props: any) => {
   };
 
   return (
-    <Box width={responsiveWidth} sx={{ margin: "auto" }}>
+    <Box width={responsiveWidth} sx={{ margin: "auto" , marginBottom:'3rem'}}>
       <Carousel
         additionalTransfrom={0}
         arrows

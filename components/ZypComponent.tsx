@@ -33,7 +33,11 @@ const ZypComponent = () => {
               margin:'1rem'
             }}
           />
-        <Box><Typography>{info.text}</Typography></Box>
+        <Box><Typography 
+          sx={{
+            color:'#272560'
+          }}
+        >{info.text}</Typography></Box>
         
         <Box 
             sx={{
@@ -46,7 +50,9 @@ const ZypComponent = () => {
               /* paddingBottom:'2rem' */
             }}>
               <Link href={info.url} >
-                <a>Learn More</a>
+                <a style={{
+                  color:'#272560'
+                }}>Learn More</a>
               </Link>
 
             </Box>

@@ -7,7 +7,8 @@ const Hero4 = () => {
 
   return (
     <Box
-      flexDirection={isNotSmallerScreen ? "row" : "column-reverse"}
+      padding={isNotSmallerScreen ? "0" : "7em 0 0 0"}
+      flexDirection={isNotSmallerScreen ? "row" : "column"}
       sx={{
         display: "flex",
         alignItems: "center",
@@ -17,36 +18,45 @@ const Hero4 = () => {
       }}
     >
       <Box
-        component={"img"}
-        width={isNotSmallerScreen ? "50%" : "100%"}
-        src={"https://m.media-amazon.com/images/I/4122DXx8nEL._AC_.jpg"}
-        sx={{ backgroundColor: "white" }}
-      ></Box>
+        width={isNotSmallerScreen ? "50%" : "100vw"}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        <Box
+          width={isNotSmallerScreen ? "50%" : "60%"}
+          component={"img"}
+          src={"https://m.media-amazon.com/images/I/4122DXx8nEL._AC_.jpg"}
+          sx={{ backgroundColor: "white" }}
+        ></Box>
+      </Box>
       <Box
+        width={isNotSmallerScreen ? "50%" : "100vw"}
         sx={{
           flexDirection: "column",
           display: "flex",
-          width: "50%",
-          backgroundColor: "black",
+
+          backgroundColor: "white",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "start",
           height: "681px",
         }}
       >
         <Box
+          width={isNotSmallerScreen ? "50%" : "100vw"}
           sx={{
             flexDirection: "column",
             display: "flex",
             backgroundColor: "white",
             justifyContent: "start",
             alignItems: "start",
-            maxWidth: "436px",
             paddingBottom: "2em",
           }}
         >
-          <ChatBubbleRoundedIcon></ChatBubbleRoundedIcon>
+          <ChatBubbleRoundedIcon
+            sx={{ width: "30px", height: "30px" }}
+          ></ChatBubbleRoundedIcon>
           <Typography
-            variant={isNotSmallerScreen ? "h2" : "h3"}
+            width={isNotSmallerScreen ? "50%" : "100vw"}
+            variant={isNotSmallerScreen ? "h3" : "h4"}
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}
             sx={{ color: "black" }}
           >
@@ -55,13 +65,13 @@ const Hero4 = () => {
         </Box>
         <Box>
           <Typography
+            width={isNotSmallerScreen ? "50%" : "100vw"}
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}
             fontSize={isNotSmallerScreen ? "18px" : "15px"}
             sx={{
               color: "black",
               fontWeigth: "300",
               height: "196px",
-              maxWidth: "436px",
             }}
           >
             We guarantee the highest quality of the products we sell. Several

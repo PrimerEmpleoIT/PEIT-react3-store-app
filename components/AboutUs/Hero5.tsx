@@ -6,6 +6,7 @@ const Hero5 = () => {
 
   return (
     <Box
+      padding={isNotSmallerScreen ? "0" : "7em 0 0 0"}
       flexDirection={isNotSmallerScreen ? "row" : "column-reverse"}
       sx={{
         display: "flex",
@@ -16,10 +17,10 @@ const Hero5 = () => {
       }}
     >
       <Box
+        width={isNotSmallerScreen ? "50%" : "100vw"}
         sx={{
           flexDirection: "column",
           display: "flex",
-          width: "50%",
           backgroundColor: "black",
           justifyContent: "center",
           alignItems: "center",
@@ -37,9 +38,15 @@ const Hero5 = () => {
             paddingBottom: "2em",
           }}
         >
-          <ChatBubbleRoundedIcon></ChatBubbleRoundedIcon>
+          <ChatBubbleRoundedIcon
+            sx={{
+              width: "30px",
+              height: "30px",
+              color: "white",
+            }}
+          ></ChatBubbleRoundedIcon>
           <Typography
-            variant={isNotSmallerScreen ? "h2" : "h3"}
+            variant={isNotSmallerScreen ? "h3" : "h4"}
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}
             sx={{ color: "white" }}
           >
@@ -66,13 +73,18 @@ const Hero5 = () => {
         </Box>
       </Box>
       <Box
-        component={"img"}
-        width={isNotSmallerScreen ? "50%" : "100%"}
-        src={
-          "https://ocdn.eu/pulscms-transforms/1/oQQk9kqTURBXy84N2JmNDcxYWQwZTA5YTQ1MDFhZmQ3MDNiZTNhNWQ0My5qcGVnkpUDIADNA0TNAdaTBc0DFM0BvN4AAqEwBaExAA"
-        }
-        sx={{ backgroundColor: "black" }}
-      ></Box>
+        width={isNotSmallerScreen ? "50%" : "100vw"}
+        sx={{ display: "flex", alignItems: "start", justifyContent: "start" }}
+      >
+        <Box
+          width={isNotSmallerScreen ? "50%" : "100%"}
+          component={"img"}
+          src={
+            "https://ocdn.eu/pulscms-transforms/1/oQQk9kqTURBXy84N2JmNDcxYWQwZTA5YTQ1MDFhZmQ3MDNiZTNhNWQ0My5qcGVnkpUDIADNA0TNAdaTBc0DFM0BvN4AAqEwBaExAA"
+          }
+          sx={{ backgroundColor: "black" }}
+        ></Box>
+      </Box>
     </Box>
   );
 };

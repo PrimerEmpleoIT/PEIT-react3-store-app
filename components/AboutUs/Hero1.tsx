@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import ChatBubbleRoundedIcon from "@mui/icons-material/ChatBubbleRounded";
 
 const Hero1 = () => {
   const isNotSmallerScreen = useMediaQuery("(min-width:900px)");
@@ -16,29 +17,38 @@ const Hero1 = () => {
       }}
     >
       <Box
+        height={isNotSmallerScreen ? "681px" : "800px"}
+        width={isNotSmallerScreen ? "50%" : "100%"}
         sx={{
           flexDirection: "column",
           display: "flex",
-          width: "50%",
           backgroundColor: "black",
           justifyContent: "center",
           alignItems: "center",
-          height: "681px",
         }}
       >
         <Box
+          width={isNotSmallerScreen ? "50%" : "100%"}
+          alignItems={isNotSmallerScreen ? "start" : "center"}
           sx={{
             flexDirection: "column",
             display: "flex",
             backgroundColor: "black",
             justifyContent: "start",
-            alignItems: "start",
-            maxWidth: "436px",
+            maxWidth: "50%",
             paddingBottom: "2em",
           }}
         >
+          <ChatBubbleRoundedIcon
+            sx={{
+              width: "30px",
+              height: "30px",
+              color: "white",
+              alignSelf: "start",
+            }}
+          ></ChatBubbleRoundedIcon>
           <Typography
-            variant={isNotSmallerScreen ? "h2" : "h3"}
+            variant={isNotSmallerScreen ? "h3" : "h4"}
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}
             sx={{ color: "white" }}
           >
@@ -47,7 +57,7 @@ const Hero1 = () => {
           <Typography
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}
             sx={{ color: "white" }}
-            variant={isNotSmallerScreen ? "h2" : "h3"}
+            variant={isNotSmallerScreen ? "h3" : "h4"}
           >
             On Growing
           </Typography>
@@ -60,7 +70,7 @@ const Hero1 = () => {
               color: "white",
               fontWeigth: "300",
               height: "196px",
-              maxWidth: "436px",
+              maxWidth: "600px",
             }}
           >
             We always aim to please the home market, supplying great computers
@@ -83,14 +93,16 @@ const Hero1 = () => {
           </Typography>
         </Box>
       </Box>
-      <Box
-        component={"img"}
-        width={isNotSmallerScreen ? "50%" : "100%"}
-        src={
-          "https://cdn.shopify.com/s/files/1/0351/8106/8420/files/IMG_0833_480x480.JPG?v=1601174168"
-        }
-        sx={{ backgroundColor: "black" }}
-      ></Box>
+      <Box width={isNotSmallerScreen ? "50%" : "100vw"}>
+        <Box
+          width={isNotSmallerScreen ? "50%" : "100%"}
+          component={"img"}
+          src={
+            "https://cdn.shopify.com/s/files/1/0351/8106/8420/files/IMG_0833_480x480.JPG?v=1601174168"
+          }
+          sx={{ backgroundColor: "black" }}
+        ></Box>
+      </Box>
     </Box>
   );
 };

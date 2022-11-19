@@ -36,7 +36,6 @@ const Hero3 = () => {
             height: "700px",
           }}
         >
-
           <Box
             sx={{
               flexDirection: "column",
@@ -48,9 +47,6 @@ const Hero3 = () => {
               paddingBottom: "2em",
             }}
           >
-            <ChatBubbleRoundedIcon
-              sx={{ width: "30px", height: "30px", color: "white" }}
-            ></ChatBubbleRoundedIcon>
             <Typography
               variant={isNotSmallerScreen ? "h3" : "h4"}
               padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}

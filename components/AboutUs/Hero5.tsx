@@ -38,13 +38,6 @@ const Hero5 = () => {
             paddingBottom: "2em",
           }}
         >
-          <ChatBubbleRoundedIcon
-            sx={{
-              width: "30px",
-              height: "30px",
-              color: "white",
-            }}
-          ></ChatBubbleRoundedIcon>
           <Typography
             variant={isNotSmallerScreen ? "h3" : "h4"}
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}

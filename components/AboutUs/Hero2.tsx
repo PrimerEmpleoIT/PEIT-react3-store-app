@@ -52,7 +52,6 @@ const Hero2 = () => {
             paddingBottom: "2em",
           }}
         >
-          <ChatBubbleRoundedIcon></ChatBubbleRoundedIcon>
           <Typography
             variant={isNotSmallerScreen ? "h2" : "h3"}
             padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}

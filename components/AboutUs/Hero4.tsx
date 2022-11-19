@@ -51,9 +51,6 @@ const Hero4 = () => {
             paddingBottom: "2em",
           }}
         >
-          <ChatBubbleRoundedIcon
-            sx={{ width: "30px", height: "30px" }}
-          ></ChatBubbleRoundedIcon>
           <Typography
             width={isNotSmallerScreen ? "50%" : "100vw"}
             variant={isNotSmallerScreen ? "h3" : "h4"}

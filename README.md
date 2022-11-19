@@ -22,9 +22,9 @@ $ npm install
 $ npm run dev
 ```
 
-in case of conflicts with the installation of modx in the node modules using the next command
+in case of conflicts with the installation of mobx in the node modules using the next command
 ```
-npm install --legacy-peer-deps modx
+npm install --legacy-peer-deps mobx
 ```
 
 

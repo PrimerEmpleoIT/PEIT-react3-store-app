@@ -8,6 +8,7 @@ import Footer from "../Footer";
 import { useStores } from "../../store/root-store-context";
 import { observer } from "mobx-react";
 import { diffInDays } from "../../src/utils/diffInDays";
+import Divider from "@mui/material/Divider";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Box
       sx={{
+        overflowX: "hidden",
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
@@ -35,6 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     >
       <Header />
       <Navbar />
+      <Divider />
       <Box sx={{ flexGrow: 1 }}>{children}</Box>
       <Testimonials />
       <ServiceCards />

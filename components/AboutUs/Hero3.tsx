@@ -36,6 +36,7 @@ const Hero3 = () => {
             height: "700px",
           }}
         >
+
           <Box
             sx={{
               flexDirection: "column",

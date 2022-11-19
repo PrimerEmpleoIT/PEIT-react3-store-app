@@ -7,7 +7,8 @@ const Hero2 = () => {
 
   return (
     <Box
-      flexDirection={isNotSmallerScreen ? "row" : "column-reverse"}
+      padding={isNotSmallerScreen ? "0" : "5em 0 0 0"}
+      flexDirection={isNotSmallerScreen ? "row" : "column"}
       sx={{
         display: "flex",
         alignItems: "center",
@@ -17,32 +18,37 @@ const Hero2 = () => {
       }}
     >
       <Box
-        component={"img"}
-        width={isNotSmallerScreen ? "50%" : "100%"}
-        src={
-          "https://24.lv/images/thumbnails/500/350/detailed/343/alienware-pro-gaming-keyboard-module-02.jpg"
-        }
-        sx={{ backgroundColor: "white" }}
-      ></Box>
+        width={isNotSmallerScreen ? "50%" : "100vw"}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        <Box
+          width={isNotSmallerScreen ? "50%" : "100%"}
+          component={"img"}
+          src={
+            "https://24.lv/images/thumbnails/500/350/detailed/343/alienware-pro-gaming-keyboard-module-02.jpg"
+          }
+          sx={{ backgroundColor: "white" }}
+        ></Box>
+      </Box>
       <Box
+        width={isNotSmallerScreen ? "50%" : "100%"}
+        alignItems={isNotSmallerScreen ? "start" : "center"}
         sx={{
           flexDirection: "column",
           display: "flex",
-          width: "50%",
-          backgroundColor: "black",
+          backgroundColor: "white",
           justifyContent: "center",
-          alignItems: "center",
           height: "681px",
         }}
       >
         <Box
+          maxWidth={isNotSmallerScreen ? "436px" : "100%"}
+          alignItems={isNotSmallerScreen ? "start" : "center"}
           sx={{
             flexDirection: "column",
             display: "flex",
             backgroundColor: "white",
             justifyContent: "start",
-            alignItems: "start",
-            maxWidth: "436px",
             paddingBottom: "2em",
           }}
         >

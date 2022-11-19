@@ -13,7 +13,7 @@ const IntelSlider = () => {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "black",
-        width: "100%",
+        width: "100vw",
       }}
     >
       <Box

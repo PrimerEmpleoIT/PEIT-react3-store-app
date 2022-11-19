@@ -42,6 +42,7 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
           /* style={{webkitBoxShadow:'0px 0px 10px 6px rgba(0,0,0,0.28)', 
           boxShadow:'0px 0px 10px 6px rgba(0,0,0,0.28)'}} */
           sx={{
+            cursor: "pointer",
             position: "relative",
             marginBottom: "1em",
             flexWrap: "wrap",
@@ -219,7 +220,7 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
         sx={{
           marginBottom: "1em",
           flexWrap: "wrap",
-          padding: "0px 25px",
+          padding: "1.5em 25px 1.5em 0",
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",

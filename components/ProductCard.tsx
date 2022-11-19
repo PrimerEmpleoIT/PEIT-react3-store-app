@@ -35,7 +35,6 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
 
   if (isHover) {
     return (
-      <Link href={`/product/${product.id}`}>
         <Box
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -52,6 +51,8 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
             width: "235px",
           }}
         >
+          <Link href={`/product/${product.id}`}>
+            <Box sx={{cursor:'pointer'}}>
           <Box
             sx={{
               width: "30px",
@@ -185,6 +186,8 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
               {`$ ${parseFloat(product.price)}`}
             </Box>
           </Box>
+          </Box>
+          </Link>
           <Box
             sx={{
               display: "flex",
@@ -201,15 +204,14 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
                 borderRadius: "50px",
               }}
               onClick={() => cartStore.addProduct(product.id)}
-            >
+              >
               <AddShoppingCartIcon
                 sx={{ width: "18.72px", height: "16.67px" }}
-              ></AddShoppingCartIcon>
+                ></AddShoppingCartIcon>
               Add To Cart
             </Button>
           </Box>
         </Box>
-      </Link>
     );
   } else {
     return (

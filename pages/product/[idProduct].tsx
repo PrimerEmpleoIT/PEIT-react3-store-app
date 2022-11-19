@@ -32,12 +32,22 @@ export default function Product() {
   }, []);
 
   return (
-    <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',maxWidth:'1398px',marginTop:'2rem',marginBottom:'2rem'}}>
-      {(product == null )
-      ?<h1>Cargando el producto</h1> 
-      :<ProductInfo product={product} />
-      }
-    
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        maxWidth: "1398px",
+        marginTop: "2rem",
+        marginBottom: "2rem",
+      }}
+    >
+      {product == null ? (
+        <h1>Cargando el producto</h1>
+      ) : (
+        <ProductInfo product={product} />
+      )}
+
       <IntelSlider />
       <ProductSupport />
       <FeatureCard />

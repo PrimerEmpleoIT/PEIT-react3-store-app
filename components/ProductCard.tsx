@@ -35,184 +35,184 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
 
   if (isHover) {
     return (
-        <Box
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          /* style={{webkitBoxShadow:'0px 0px 10px 6px rgba(0,0,0,0.28)', 
+      <Box
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        /* style={{webkitBoxShadow:'0px 0px 10px 6px rgba(0,0,0,0.28)', 
           boxShadow:'0px 0px 10px 6px rgba(0,0,0,0.28)'}} */
-          sx={{
-            cursor: "pointer",
-            position: "relative",
-            marginBottom: "1em",
-            flexWrap: "wrap",
-            padding: "0px 25px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "235px",
-          }}
-        >
-          <Link href={`/product/${product.id}`}>
-            <Box sx={{cursor:'pointer'}}>
-          <Box
-            sx={{
-              width: "30px",
-              height: "30px",
-              borderRadius: "50%",
-              border: "2px solid #A2A6B0",
-              position: "absolute",
-              color: "#A2A6B0",
-              top: "5%",
-              right: "10%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <FavoriteBorderRoundedIcon
-              sx={{
-                margin: "auto",
-                color: "#A2A6B0",
-              }}
-            ></FavoriteBorderRoundedIcon>
-          </Box>
-          <Box
-            sx={{
-              width: "30px",
-              height: "30px",
-              borderRadius: "50%",
-              border: "2px solid #A2A6B0",
-              position: "absolute",
-              color: "#A2A6B0",
-              top: "15%",
-              right: "10%",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <EqualizerIcon
-              sx={{
-                margin: "auto",
-                color: "#A2A6B0",
-              }}
-            ></EqualizerIcon>
-          </Box>
-          <Box
-            sx={{
-              color: `${colorStyle}`,
-              fontWeight: "400",
-              fontSize: "10px",
-              display: "flex",
-              alignItems: "center",
-              alignSelf: "flex-start",
-            }}
-          >
-            {product.stock > 0 ? (
-              <>
-                <CheckCircleIcon
-                  sx={{ color: "#78A962", width: "15px", height: "15px" }}
-                />{" "}
-                In Stock
-              </>
-            ) : (
-              <>
-                <CallSharpIcon
-                  sx={{ color: "red", width: "15px", height: "15px" }}
-                />{" "}
-                Check Avalaibility
-              </>
-            )}
-          </Box>
-          <Box
-            component={"img"}
-            src={product.images.split(",")[0]}
-            sx={{
-              marginRight: "1em",
-              width: "150px",
-              alignSelf: "center",
-            }}
-          ></Box>
-          <Box sx={{ display: "inline-flex", alignItems: "center" }}>
-            {reviews.map((data, id) =>
-              data ? (
-                <Star
-                  key={id}
-                  sx={{ color: "orange", width: "13px", height: "13px" }}
-                ></Star>
-              ) : (
-                <Star
-                  key={id}
-                  sx={{ color: "#CACDD8", width: "13px", height: "13px" }}
-                ></Star>
-              )
-            )}
-            <p style={{ paddingLeft: "15px" }}>reviews({reviews})</p>
-          </Box>
-          <Box
-            sx={{
-              width: "185px",
-              height: "65px",
-              fontWeight: "400",
-              fontSize: "14px",
-            }}
-          >
-            {product.title}
-          </Box>
-          <Box
-            sx={{
-              width: "184px",
-              height: "75px",
-              padding: "10px",
-              alignItems: "center",
-              display: "column",
-            }}
-          >
+        sx={{
+          cursor: "pointer",
+          position: "relative",
+          marginBottom: "1em",
+          flexWrap: "wrap",
+          // padding: "0px 25px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          width: "190px",
+        }}
+      >
+        <Link href={`/product/${product.id}`}>
+          <Box sx={{ cursor: "pointer" }}>
             <Box
               sx={{
-                textDecorationLine: "line-through",
-                color: "grey",
+                width: "30px",
+                height: "30px",
+                borderRadius: "50%",
+                border: "2px solid #A2A6B0",
+                position: "absolute",
+                color: "#A2A6B0",
+                top: "5%",
+                right: "10%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <FavoriteBorderRoundedIcon
+                sx={{
+                  margin: "auto",
+                  color: "#A2A6B0",
+                }}
+              ></FavoriteBorderRoundedIcon>
+            </Box>
+            <Box
+              sx={{
+                width: "30px",
+                height: "30px",
+                borderRadius: "50%",
+                border: "2px solid #A2A6B0",
+                position: "absolute",
+                color: "#A2A6B0",
+                top: "15%",
+                right: "10%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <EqualizerIcon
+                sx={{
+                  margin: "auto",
+                  color: "#A2A6B0",
+                }}
+              ></EqualizerIcon>
+            </Box>
+            <Box
+              sx={{
+                color: `${colorStyle}`,
+                fontWeight: "400",
+                fontSize: "10px",
+                display: "flex",
+                alignItems: "center",
+                alignSelf: "flex-start",
+              }}
+            >
+              {product.stock > 0 ? (
+                <>
+                  <CheckCircleIcon
+                    sx={{ color: "#78A962", width: "15px", height: "15px" }}
+                  />{" "}
+                  In Stock
+                </>
+              ) : (
+                <>
+                  <CallSharpIcon
+                    sx={{ color: "red", width: "15px", height: "15px" }}
+                  />{" "}
+                  Check Avalaibility
+                </>
+              )}
+            </Box>
+            <Box
+              component={"img"}
+              src={product.images.split(",")[0]}
+              sx={{
+                marginRight: "1em",
+                width: "150px",
+                alignSelf: "center",
+              }}
+            ></Box>
+            <Box sx={{ display: "inline-flex", alignItems: "center" }}>
+              {reviews.map((data, id) =>
+                data ? (
+                  <Star
+                    key={id}
+                    sx={{ color: "orange", width: "13px", height: "13px" }}
+                  ></Star>
+                ) : (
+                  <Star
+                    key={id}
+                    sx={{ color: "#CACDD8", width: "13px", height: "13px" }}
+                  ></Star>
+                )
+              )}
+              <p style={{ paddingLeft: "15px" }}>reviews({reviews})</p>
+            </Box>
+            <Box
+              sx={{
+                width: "185px",
+                height: "65px",
                 fontWeight: "400",
                 fontSize: "14px",
               }}
             >
-              {`$ ${
-                parseFloat(product.price) -
-                Math.floor(parseFloat(product.price))
-              }`}
+              {product.title}
             </Box>
             <Box
               sx={{
-                textDecorationColor: "black",
+                width: "184px",
+                height: "75px",
+                padding: "10px",
+                alignItems: "center",
+                display: "column",
               }}
             >
-              {`$ ${parseFloat(product.price)}`}
+              <Box
+                sx={{
+                  textDecorationLine: "line-through",
+                  color: "grey",
+                  fontWeight: "400",
+                  fontSize: "14px",
+                }}
+              >
+                {`$ ${
+                  parseFloat(product.price) -
+                  Math.floor(parseFloat(product.price))
+                }`}
+              </Box>
+              <Box
+                sx={{
+                  textDecorationColor: "black",
+                }}
+              >
+                {`$ ${parseFloat(product.price)}`}
+              </Box>
             </Box>
           </Box>
-          </Box>
-          </Link>
-          <Box
+        </Link>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            margin: "auto",
+            width: "160.84px",
+            height: "37px",
+          }}
+        >
+          <Button
             sx={{
-              display: "flex",
-              alignItems: "center",
-              margin: "auto",
-              width: "160.84px",
-              height: "37px",
+              color: "#0156FF",
+              border: "2px solid #0156FF",
+              borderRadius: "50px",
             }}
+            onClick={() => cartStore.addProduct(product.id)}
           >
-            <Button
-              sx={{
-                color: "#0156FF",
-                border: "2px solid #0156FF",
-                borderRadius: "50px",
-              }}
-              onClick={() => cartStore.addProduct(product.id)}
-              >
-              <AddShoppingCartIcon
-                sx={{ width: "18.72px", height: "16.67px" }}
-                ></AddShoppingCartIcon>
-              Add To Cart
-            </Button>
-          </Box>
+            <AddShoppingCartIcon
+              sx={{ width: "18.72px", height: "16.67px" }}
+            ></AddShoppingCartIcon>
+            Add To Cart
+          </Button>
         </Box>
+      </Box>
     );
   } else {
     return (
@@ -222,11 +222,11 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
         sx={{
           marginBottom: "1em",
           flexWrap: "wrap",
-          padding: "1.5em 25px 1.5em 0",
+          // padding: "1.5em 25px 1.5em 0",
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
-          width: "235px",
+          width: "190px",
         }}
       >
         <Box

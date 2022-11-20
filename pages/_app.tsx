@@ -9,6 +9,7 @@ import persist from "mst-persist";
 import { RootStoreProvider } from "../store/root-store-context";
 import { rootStore } from "../store/root-store";
 import Layout from "../components/layouts/main";
+import "../styles/globals.css";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

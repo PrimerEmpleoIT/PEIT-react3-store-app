@@ -68,7 +68,7 @@ const NewProductsSlider: React.FC = () => {
           See all new products
         </Typography>
       </Box>
-      {/* 
+
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -96,6 +96,7 @@ const NewProductsSlider: React.FC = () => {
         sliderClass=""
         slidesToSlide={1}
         swipeable
+        autoPlay
       >
         {productsStore.products.map((product) => (
           <ProductCard
@@ -103,9 +104,9 @@ const NewProductsSlider: React.FC = () => {
             product={product as ProductType}
           />
         ))}
-      </Carousel> */}
+      </Carousel>
     </Box>
   );
 };
 
-export default NewProductsSlider;
+export default observer(NewProductsSlider);

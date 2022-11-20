@@ -4,4 +4,17 @@ const nextConfig = {
   swcMinify: true,
 }
 
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ibb.co',
+        port: '',
+        pathname: '/album/**',
+      },
+    ],
+  },
+}
+
 module.exports = nextConfig

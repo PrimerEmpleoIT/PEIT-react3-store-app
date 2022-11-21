@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useSnackbar } from "notistack";
 import { Button, Box, Typography } from "@mui/material";
 import Star from "@mui/icons-material/Star";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -11,7 +10,6 @@ import { ProductType } from "../src/types/products";
 import { useStores } from "../store/root-store-context";
 
 const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
-  const { enqueueSnackbar } = useSnackbar();
   const { cartStore } = useStores();
 
   let max = 3; // TODO: get rate
@@ -27,9 +25,6 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
 
   const onAddToCart = (productId: number) => {
     cartStore.addProduct(productId);
-    enqueueSnackbar("Product added to cart", {
-      variant: "success",
-    });
   };
 
   return (

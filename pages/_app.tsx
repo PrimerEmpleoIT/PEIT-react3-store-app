@@ -37,6 +37,7 @@ export default function MyApp(props: any) {
             </Layout>
           </RootStoreProvider>
         </SnackbarProvider>
+        <div id="snackbarhelper" />
       </ThemeProvider>
     </CacheProvider>
   );

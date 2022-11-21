@@ -6,6 +6,7 @@ import { CacheProvider } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmootionCache";
 import persist from "mst-persist";
+import { SnackbarProvider } from "notistack";
 import { RootStoreProvider } from "../store/root-store-context";
 import { rootStore } from "../store/root-store";
 import Layout from "../components/layouts/main";
@@ -27,13 +28,15 @@ export default function MyApp(props: any) {
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
-        <RootStoreProvider value={rootStore}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </RootStoreProvider>
+        <SnackbarProvider maxSnack={3}>
+          <RootStoreProvider value={rootStore}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </RootStoreProvider>
+        </SnackbarProvider>
       </ThemeProvider>
     </CacheProvider>
   );

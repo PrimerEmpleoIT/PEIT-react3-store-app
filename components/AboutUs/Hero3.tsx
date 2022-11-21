@@ -52,7 +52,7 @@ const Hero3 = () => {
               padding={isNotSmallerScreen ? "0 0 0 0" : "0 2rem 0 2rem"}
               sx={{ color: "white" }}
             >
-              You're In Safe Hands
+              You´re In Safe Hands
             </Typography>
           </Box>
           <Box>

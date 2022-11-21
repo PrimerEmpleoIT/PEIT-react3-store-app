@@ -5,7 +5,6 @@ import ImageCard from "./ImageCard";
 import category from "../src/constants/category";
 import { ProductType } from "../src/types/products";
 import { categoriesApi } from "../src/services/categoriesApi";
-import useMediaQuery from "@mui/material/useMediaQuery";
 interface TypeProductsProps {
   index: number;
 }
@@ -25,7 +24,6 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
     getCategoy();
   }, []);
 
-  const isMobile = useMediaQuery("(min-width:500px)");
   return (
     <Box
       display="flex"
@@ -56,19 +54,18 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
           className="scrollable"
           width={{
             xs: "100%",
-            md: "calc(100vw - 300px)",
+            tablet: "calc(100vw - 300px)",
           }}
           sx={{
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
             margin: "1rem",
-            maxWidth: "1398px",
             flexDirection: "row",
             overflowX: "auto",
           }}
         >
-          {products.slice(0, 10).map((product) => (
+          {products.slice(0, 20).map((product) => (
             <ProductCard key={`product-${product.id}`} product={product} />
           ))}
         </Box>

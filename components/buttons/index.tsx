@@ -17,7 +17,11 @@ export const CustomBtn: React.FC<CustomBtnProps> = (props) => {
         color: isPrimary ? "#0156ff" : "#FFF",
         borderRadius: "35px",
         border: `2px solid ${isPrimary ? "#0156ff" : "#FFF"}`,
-        width: "250px",
+        width: {
+          xs: "162px",
+          mobile: "182px",
+          tablet: "250px",
+        },
         height: "37px",
         margin: "17.8px 0 20.23px 0",
         ":hover": {
@@ -25,6 +29,8 @@ export const CustomBtn: React.FC<CustomBtnProps> = (props) => {
           color: isPrimary ? "#FFF" : "#0156ff",
           transition: "0.6s",
         },
+        fontSize: "14px",
+        fontWeight: "600",
       }}
       onClick={handleOnClick}
     >

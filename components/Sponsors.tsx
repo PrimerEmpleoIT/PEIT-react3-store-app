@@ -1,66 +1,40 @@
-
-import { Container, Box } from '@mui/system';
-import {styled} from '@mui/material';
-import sponsor from '../src/constants/sponsor'
-
+import { Box } from "@mui/system";
+import sponsor from "../src/constants/sponsor";
 
 const Sponsors = (props: any) => {
-
-
-  const ContentImage = styled('div')`
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-        
-    width: 200px;
-    height: 149.48px;
-    :hover{
-      background-color: #ebebeb;
-      transition: .2s;
-    }
-
-    `
-  
-
-
   return (
-    <Container maxWidth="sm" sx={{
-      display:'flex',
-      justifyContent:'center',
-      flexFlow:'row wrap'
-      
-    }}>
+    <Box
+      display="flex"
+      flexDirection="row"
+      flexWrap="wrap"
+      justifyContent="center"
+      alignItems="center"
+      width="calc(100% - 30px)"
+    >
+      {sponsor.map((source, index) => {
+        return (
+          <Box
+            component={"img"}
+            src={source.img}
+            alt={source.name}
+            sx={{
+              flex: "none",
+              order: "0",
+              flexGrow: "0",
+              width: "127px",
+              height: "66px",
+              margin: "22px",
+              "&:hover": {
+                backgroundColor: "#ebebeb",
+                transition: "0.2s",
+              },
+            }}
+            key={index}
+          />
+        );
+      })}
+    </Box>
+  );
+};
 
-      
-      
-      {
-        sponsor.map((source,index)=>{
-          return (
-            <ContentImage key={index}>
-              
-              <Box
-                component={"img"}
-                src={source.img}
-                alt = {source.name}
-                sx={{ flex:'none',
-                      order:'0',
-                      flexGrow:'0',
-                      width:'152.72px', 
-                      height :'80px'
-                      
-                    }}
-              />
-
-            </ContentImage>
-          )
-        })
-      }
-     
-      
-      
-    </Container>
-  )
-}
-
-export default Sponsors
+export default Sponsors;

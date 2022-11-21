@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Box, CircularProgress, Container } from "@mui/material";
+import { Box, CircularProgress, Container, Grid } from "@mui/material";
 import ProductCard from "./ProductCard";
 import ImageCard from "./ImageCard";
 import category from "../src/constants/category";
 import { ProductType } from "../src/types/products";
 import { categoriesApi } from "../src/services/categoriesApi";
-import useMediaQuery from "@mui/material/useMediaQuery";
 interface TypeProductsProps {
   index: number;
 }
@@ -25,59 +24,52 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
     getCategoy();
   }, []);
 
-  const isNotSmallerScreen = useMediaQuery("(min-width:900px)")
-  const isMobile = useMediaQuery("(min-width:500px)")
   return (
     <Box
-      flexDirection={isMobile ? "row" : "column"} 
-      sx={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        margin: "1rem",
-        width: "100%",
-        maxWidth: "1398px",
-        
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      flexDirection={{
+        xs: "column",
+        tablet: "row",
       }}
+      width="calc(100% - 30px)"
+      my="20px"
     >
-      
+      <ImageCard
+        name={category.find((item) => item.id === index)?.name || ""}
+        img={category.find((item) => item.id === index)?.img || ""}
+        url={category.find((item) => item.id === index)?.url || ""}
+      />
 
-      
-        <ImageCard
-          name={category.find((item) => item.id === index)?.name || ""}
-          img={category.find((item) => item.id === index)?.img || ""}
-          url={category.find((item) => item.id === index)?.url || ""}
-        />
+      {loading && (
+        <Box display="flex" justifyContent="center" width="100%">
+          <CircularProgress />
+        </Box>
+      )}
+
+      {products && !loading && (
         <Box
+          gap={4}
+          className="scrollable"
+          width={{
+            xs: "100%",
+            tablet: "calc(100vw - 300px)",
+          }}
           sx={{
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
             margin: "1rem",
-            width: "100%",
-            maxWidth: "1398px",
-            flexDirection:'row'
-          }} 
+            flexDirection: "row",
+            overflowX: "auto",
+          }}
         >
-        {loading ? (
-          <Box display="flex" justifyContent="center" width="100%">
-            <CircularProgress />
-          </Box>
-        ) : ( isNotSmallerScreen?
-          products &&
-          products
-            .slice(0,5)
-            .map((product) => (
-              <ProductCard key={`product-${product.id}`} product={product} />
-            ))
-          :products &&
-          products
-              .slice(0,2)
-              .map((product) => (
-                <ProductCard key={`product-${product.id}`} product={product} />
-              ))
-        )}
+          {products.slice(0, 20).map((product) => (
+            <ProductCard key={`product-${product.id}`} product={product} />
+          ))}
         </Box>
+      )}
     </Box>
   );
 };

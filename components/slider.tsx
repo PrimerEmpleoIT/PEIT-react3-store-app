@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProductCard from "./ProductCard";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { ProductType } from "../src/types/products";
 import { useStores } from "../store/root-store-context";
@@ -37,28 +37,38 @@ const NewProductsSlider: React.FC = () => {
     },
   };
   return (
-    <Box maxWidth={responsiveWidth} sx={{ margin: "auto" }}>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box
-          sx={{
-            color: "#000000",
-            alignItems: "center",
-            paddingLeft: "1.5em",
-            fontSize: "22px",
+    <Box
+      maxWidth={responsiveWidth}
+      sx={{ margin: "auto" }}
+      width="100%"
+      px="15px"
+    >
+      <Box display="flex" justifyContent="space-between" width="100%">
+        <Typography
+          variant="h3"
+          color="#000"
+          fontSize={{
+            xs: "18px",
+            desktop: "22px",
           }}
+          fontWeight="bold"
         >
-          <strong> New Products</strong>
-        </Box>
-        <Box
+          New Products
+        </Typography>
+        <Typography
+          color="#0156FF"
+          fontSize={{
+            xs: "10px",
+            desktop: "13px",
+          }}
           sx={{
-            color: "#0156FF",
             textDecorationLine: "underline",
           }}
         >
-          {" "}
           See all new products
-        </Box>
+        </Typography>
       </Box>
+
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -86,6 +96,7 @@ const NewProductsSlider: React.FC = () => {
         sliderClass=""
         slidesToSlide={1}
         swipeable
+        autoPlay
       >
         {productsStore.products.map((product) => (
           <ProductCard

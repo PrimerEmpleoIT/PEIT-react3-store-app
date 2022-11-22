@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { types, Instance, SnapshotOut } from "mobx-state-tree";
+import toast from "../components/toast";
 
 const CartItem = types.model("CartItem").props({
   quantity: types.number,
@@ -19,13 +20,28 @@ export const CartStore = types
       );
       if (productIdx === -1) {
         self.cart.push({ productId, quantity: 1 });
+        toast.success("Product added to cart");
       } else {
         self.cart[productIdx].quantity += 1;
+        toast.success("Product quantity updated");
+      }
+    }
+
+    function removeProduct(productId: number) {
+      const productIdx = self.cart.findIndex(
+        (item) => item.productId === productId
+      );
+      if (productIdx !== -1) {
+        self.cart.splice(productIdx, 1);
+        toast.success("Product removed from cart");
+      } else {
+        toast.error("Product not found");
       }
     }
 
     return {
       addProduct,
+      removeProduct,
     };
   });
 

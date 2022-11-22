@@ -5,9 +5,16 @@ import { red } from "@mui/material/colors";
 const theme = createTheme({
   breakpoints: {
     values: {
-      mobile: "375",
-      tablet: "768",
-      desktop: "1200",
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      mobile: 375,
+      mobileL: 425,
+      tabletS: 500,
+      tablet: 768,
+      desktop: 1200,
     },
   },
   palette: {

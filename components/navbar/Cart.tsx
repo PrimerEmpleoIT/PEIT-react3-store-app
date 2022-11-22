@@ -1,5 +1,4 @@
 import React from "react";
-import { toJS } from "mobx";
 import { observer } from "mobx-react";
 import { Box, Divider, Menu, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -88,41 +87,42 @@ const Cart: React.FC<CartProps> = (props) => {
 
 export default observer(Cart);
 
-const CartItem: React.FC<{ product: ProductType; quantity: number }> = ({
-  product,
-  quantity,
-}) => {
-  return (
-    <Box display="flex" alignItems="center" gap="10px" py="12px">
-      <Typography fontSize="14px">{quantity}&nbsp;x</Typography>
-      <Box
-        component={"img"}
-        src={product.images.split(",")[0]}
-        sx={{
-          width: "65px",
-          alignSelf: "center",
-        }}
-      />
-      <Box width="153px">
-        <Typography fontSize="13px">
-          {product.details.slice(0, 40)}...
-        </Typography>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        gap="6px"
-      >
-        <ActionBtn
-          icon={<CloseIcon sx={{ fontSize: "18px" }} />}
-          handleOnClick={() => console.log("remove")}
+const CartItem: React.FC<{ product: ProductType; quantity: number }> = observer(
+  ({ product, quantity }) => {
+    const { cartStore } = useStores();
+
+    return (
+      <Box display="flex" alignItems="center" gap="10px" py="12px">
+        <Typography fontSize="14px">{quantity}&nbsp;x</Typography>
+        <Box
+          component={"img"}
+          src={product.images.split(",")[0]}
+          sx={{
+            width: "65px",
+            alignSelf: "center",
+          }}
         />
-        <ActionBtn
-          icon={<EditIcon sx={{ fontSize: "14px" }} />}
-          handleOnClick={() => console.log("edit")}
-        />
+        <Box width="153px">
+          <Typography fontSize="13px">
+            {product.details.slice(0, 40)}...
+          </Typography>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          gap="6px"
+        >
+          <ActionBtn
+            icon={<CloseIcon sx={{ fontSize: "18px" }} />}
+            handleOnClick={() => cartStore.removeProduct(product.id)}
+          />
+          <ActionBtn
+            icon={<EditIcon sx={{ fontSize: "14px" }} />}
+            handleOnClick={() => console.log("edit")}
+          />
+        </Box>
       </Box>
-    </Box>
-  );
-};
+    );
+  }
+);

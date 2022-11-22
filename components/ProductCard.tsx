@@ -38,7 +38,7 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
         alignItems: "center",
         justifyContent: "space-between",
         width: "190px",
-        height: "380px",
+        height: "390px",
       }}
     >
       <Box

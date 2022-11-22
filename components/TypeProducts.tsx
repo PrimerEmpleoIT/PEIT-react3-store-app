@@ -1,28 +1,18 @@
-import { useEffect, useState } from "react";
-import { Box, CircularProgress, Container, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import ProductCard from "./ProductCard";
 import ImageCard from "./ImageCard";
 import category from "../src/constants/category";
 import { ProductType } from "../src/types/products";
-import { categoriesApi } from "../src/services/categoriesApi";
+import { useStores } from "../store/root-store-context";
+import { observer } from "mobx-react";
+
 interface TypeProductsProps {
   index: number;
 }
 
 const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
-  const [products, setProducts] = useState<ProductType[] | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  const getCategoy = async () => {
-    setLoading(true);
-    const response = await categoriesApi.getCategoryById(index);
-    setProducts(response.products);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    getCategoy();
-  }, []);
+  const { productsStore } = useStores();
+  const products = productsStore.productsByCategory(index) as ProductType[];
 
   return (
     <Box
@@ -42,13 +32,7 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
         url={category.find((item) => item.id === index)?.url || ""}
       />
 
-      {loading && (
-        <Box display="flex" justifyContent="center" width="100%">
-          <CircularProgress />
-        </Box>
-      )}
-
-      {products && !loading && (
+      {products && (
         <Box
           gap={4}
           className="scrollable"
@@ -56,12 +40,12 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
             xs: "100%",
             tablet: "calc(100vw - 300px)",
           }}
+          display="flex"
+          flexDirection="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          margin="1rem"
           sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            margin: "1rem",
-            flexDirection: "row",
             overflowX: "auto",
           }}
         >
@@ -74,4 +58,4 @@ const TypeProducts: React.FC<TypeProductsProps> = ({ index }) => {
   );
 };
 
-export default TypeProducts;
+export default observer(TypeProducts);

@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { types, Instance, SnapshotOut } from "mobx-state-tree";
 import { productsApi } from "../src/services/productsApi";
+import toast from '../components/toast';
 
 const Product = types.model("Product").props({
   category: types.maybeNull(types.number),
@@ -27,6 +28,9 @@ export const ProductsStore = types
         cart.some((item) => item.productId === product.id)
       );
     },
+    productsByCategory(categoryId: number) {
+      return self.products.filter((product) => product.category === categoryId);
+    }
   }))
   .actions((self) => {
     function updateProducts(products: any) {
@@ -42,6 +46,10 @@ export const ProductsStore = types
       const response = await productsApi.getProducts();
       if (!response.kind) {
         self.updateProducts(response);
+      } else {
+        if (!self.products.length) {
+          toast.warning("There was a problem loading the products. Reload the page please");
+        }
       }
     },
   }));

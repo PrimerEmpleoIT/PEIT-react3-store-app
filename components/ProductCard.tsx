@@ -23,6 +23,10 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
     reviews.push(false);
   }
 
+  const onAddToCart = (productId: number) => {
+    cartStore.addProduct(productId);
+  };
+
   return (
     <Box
       sx={{
@@ -34,7 +38,7 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
         alignItems: "center",
         justifyContent: "space-between",
         width: "190px",
-        height: "380px",
+        height: "390px",
       }}
     >
       <Box
@@ -197,7 +201,7 @@ const ProductCard: React.FC<{ product: ProductType }> = ({ product }) => {
             border: "2px solid #0156FF",
             borderRadius: "50px",
           }}
-          onClick={() => cartStore.addProduct(product.id)}
+          onClick={() => onAddToCart(product.id)}
         >
           <AddShoppingCartIcon
             sx={{ width: "18.72px", height: "16.67px" }}
